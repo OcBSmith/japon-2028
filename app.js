@@ -157,6 +157,16 @@
           { id: "hiroshima3", tag: "H3", title: "Samuráis, Donki & Ekinishi", color: "#f59e0b" },
           { id: "hiroshima4", tag: "H4", title: "165 Helados & Serpientes Sagradas", color: "#10b981" }
         ]
+      },
+      nagasaki: {
+        name: "Nagasaki",
+        icon: "⚓",
+        baseTitle: "Base Nagasaki · 3 noches",
+        days: [
+          { id: "nagasaki1", tag: "N1", title: "Historia Holandesa & Vistas Top 3 Mundial", color: "#0284c7" },
+          { id: "nagasaki2", tag: "N2", title: "Paz, Capibaras de Bio Park & Torre Parfait 120 cm", color: "#059669" },
+          { id: "nagasaki3", tag: "N3", title: "Isla Fantasma Gunkanjima & Colina Glover", color: "#d97706" }
+        ]
       }
     };
 
@@ -171,7 +181,7 @@
       if (currentBase === 'all') {
         const allBtn = document.createElement('button');
         allBtn.className = `day-filter-btn ${currentDay === 'all' ? 'active' : ''}`;
-        allBtn.innerHTML = `🗺️ Todo el viaje (18 jornadas)`;
+        allBtn.innerHTML = `🗺️ Todo el viaje (21 jornadas)`;
         allBtn.onclick = () => filterDay('all');
         container.appendChild(allBtn);
 
@@ -192,7 +202,7 @@
             container.appendChild(btn);
           });
         });
-      } else if (['beppu', 'fukuoka', 'okinawa', 'hiroshima'].includes(currentBase)) {
+      } else if (['beppu', 'fukuoka', 'okinawa', 'hiroshima', 'nagasaki'].includes(currentBase)) {
         const struct = tripStructure[currentBase];
         const label = document.createElement('span');
         label.className = 'day-filter-label';
@@ -220,7 +230,7 @@
 
         const note = document.createElement('span');
         note.className = 'text-xs text-slate-500 py-1';
-        note.textContent = 'Opciones en Beppu, Hakata, Naha e Hiroshima';
+        note.textContent = 'Opciones en Beppu, Hakata, Naha, Hiroshima y Nagasaki';
         container.appendChild(note);
       }
     }
@@ -235,7 +245,7 @@
       if (currentBase === 'all' && currentDay === 'all') {
         counterEl.textContent = `${totalDays} días planificados`;
         if (breakdownEl) {
-          breakdownEl.innerHTML = `<span>Bases planificadas:</span> <span class="font-medium text-slate-700">♨️ Beppu (3d) · 🏙️ Fukuoka (6d) · 🌺 Okinawa (5d) · ⛩️ Hiroshima (4d)</span> <span class="text-slate-400">· ${totalStops} paradas</span>`;
+          breakdownEl.innerHTML = `<span>Bases planificadas:</span> <span class="font-medium text-slate-700">♨️ Beppu (3d) · 🏙️ Fukuoka (6d) · 🌺 Okinawa (5d) · ⛩️ Hiroshima (4d) · ⚓ Nagasaki (3d)</span> <span class="text-slate-400">· ${totalStops} paradas</span>`;
         }
       } else if (currentDay !== 'all') {
         let dayObj = null;
@@ -262,7 +272,7 @@
         const totalHotels = places.filter(p => p.type === 'hotel').length;
         counterEl.textContent = `${totalHotels} alojamientos previstos`;
         if (breakdownEl) {
-          breakdownEl.innerHTML = `<span>Alojamientos recomendados en Beppu, Hakata, Naha e Hiroshima</span>`;
+          breakdownEl.innerHTML = `<span>Alojamientos recomendados en Beppu, Hakata, Naha, Hiroshima y Nagasaki</span>`;
         }
       }
     }
@@ -305,7 +315,7 @@
     }
 
     function filterMap(filter) {
-      if (['all', 'beppu', 'fukuoka', 'okinawa', 'hiroshima', 'hotel'].includes(filter)) {
+      if (['all', 'beppu', 'fukuoka', 'okinawa', 'hiroshima', 'nagasaki', 'hotel'].includes(filter)) {
         setBaseFilter(filter);
       } else {
         filterDay(filter);
@@ -339,7 +349,10 @@
         hiroshima1: 'Hiroshima · Día 1 (Paz, Otaku & Pizza Vending): Llegada a la nueva terminal minamoa y visita al Pokémon Center, Cúpula de la Bomba Atómica (Genbaku Dome), Parque Conmemorativo, Museo de la Paz, mirador de la Torre Orizuru con su tobogán espiral de madera gigante, banquete en el laberinto de 4 plantas de Okonomimura, safari otaku en Hondori (Animate, Lashinbang y la delirante tienda Village Vanguard), cabinas antisociales de Ichiran y la máquina callejera de pizzas recién horneadas.',
         hiroshima2: 'Hiroshima · Día 2 (Miyajima Bizarra & Templo Oscuro): Ferry con vistas al Gran Torii flotante, pasarelas de Itsukushima entre ciervos sika, safari de street food bizarro en Omotesando (Pettara Pottara con ostra caramelizada, panecillo de okonomiyaki completo, Age-Momiji frito y la colosal pala de arroz de Godzilla de 7,7 m), adentrarse a ciegas en la oscuridad absoluta de la cueva Tadan-do en Daisho-in entre 500 estatuas con gorros de lana, teleférico al monte Misen y cóctel de ron con ositos Haribo en Bar Gebura.',
         hiroshima3: 'Hiroshima · Día 3 (Samuráis, Donki & Ekinishi): Fortaleza samurái del Castillo de Hiroshima y árboles que sobrevivieron a la bomba atómica, jardín tradicional Shukkei-en, desafío picante de Shirunashi Tantanmen King-ken (fideos con pimienta sansho anestésica al gusto), inmersión kitsch en el macro-bazar de Don Quijote Hacchobori y ruta clandestina nocturna por las tabernas en miniatura de los callejones de la posguerra de Ekinishi.',
-        hiroshima4: 'Hiroshima · Día 4 (165 Helados & Serpientes Sagradas): Excursión al histórico puente samurái de madera de cinco arcos Kintai-kyo en Iwakuni, reto gastronómico extremo en Musashi Soft Cream (165 sabores bizarros: wasabi, curry, ajo, ramen, natto o salsa de soja), visita a las míticas serpientes albinas sagradas Shirohebi veneradas por la fortuna y compras de despedida con dulces Nama Momiji en minamoa / ekie.'
+        hiroshima4: 'Hiroshima · Día 4 (165 Helados & Serpientes Sagradas): Excursión al histórico puente samurái de madera de cinco arcos Kintai-kyo en Iwakuni, reto gastronómico extremo en Musashi Soft Cream (165 sabores bizarros: wasabi, curry, ajo, ramen, natto o salsa de soja), visita a las míticas serpientes albinas sagradas Shirohebi veneradas por la fortuna y compras de despedida con dulces Nama Momiji en minamoa / ekie.',
+        nagasaki1: 'Nagasaki · Día 1 (Historia Holandesa & Vistas Top 3 Mundial): Llegada en el tren bala Kamome, inmersión en la factoría holandesa de Dejima, banquete de Champon y Sara Udon en el barrio chino Shinchi más antiguo de Japón, reto de las 20 piedras corazón en el puente Meganebashi y atardecer mágico subiendo en teleférico panorámico al Monte Inasa (galardonado como una de las 3 mejores vistas nocturnas del planeta).',
+        nagasaki2: 'Nagasaki · Día 2 (Paz, Capibaras de Bio Park & Torre Parfait 120 cm): Homenaje en la icónica Estatua de la Paz y la Fuente de la Paz, excursión a Nagasaki Bio Park para acariciar y alimentar capibaras gigantes en libertad absoluta y verlos bañarse en aguas termales con cítricos, y reto gastronómico friki en Cafe Olympic: devorar Toruko Rice y enfrentarse a su colosal torre de helado y pasteles de hasta 1,20 metros.',
+        nagasaki3: 'Nagasaki · Día 3 (Isla Fantasma Gunkanjima & Colina Glover): Expedición en barco y desembarco entre las ruinas de hormigón y rascacielos fantasma de la isla minera Hashima (Gunkanjima, escenario de James Bond Skyfall), almuerzo en el palacio culinario de Shikairou, subida a la Basílica gótica de Ōura y paseo entre las mansiones occidentales del siglo XIX de Glover Garden buscando losas corazón.'
       };
 
       const parkingNote = document.createElement('p');
@@ -352,12 +365,14 @@
         parkingNote.textContent = 'Base Okinawa · 5 días por la isla principal con base en Naha. Día 1 sin coche; coche desde Día 2. Excursión a Kerama flexible por el estado del mar.';
       } else if (filter === 'hiroshima') {
         parkingNote.textContent = 'Base Hiroshima · 4 días (Eje de la Paz, isla sagrada de Miyajima, Castillo feudal/Shukkei-en y excursión al puente Kintai-kyo en Iwakuni). Plan basado en el cuaderno oficial de viaje.';
+      } else if (filter === 'nagasaki') {
+        parkingNote.textContent = 'Base Nagasaki · 3 noches (Llegada en Shinkansen Kamome, Dejima, Shinchi Chinatown, Monte Inasa, Parque de la Paz, Bio Park con capibaras libres, torre parfait de 120 cm, expedición a Gunkanjima y colina Glover).';
       } else if (filter === 'beppu') {
         parkingNote.textContent = 'Base Beppu · tres días: Kannawa, Monte y Centro, y Yufuin. Visitas, rutas y alojamientos de la etapa.';
       } else if (filter === 'hotel') {
-        parkingNote.textContent = 'Opciones de alojamiento en Beppu, Hakata, Naha e Hiroshima. Al elegirlos, ajustaremos las salidas diarias.';
+        parkingNote.textContent = 'Opciones de alojamiento en Beppu, Hakata, Naha, Hiroshima y Nagasaki. Al elegirlos, ajustaremos las salidas diarias.';
       } else {
-        parkingNote.textContent = 'Mapa completo de Japón 2028 (Kyushu, Okinawa y Hiroshima). Selecciona una ciudad o un día concreto en la cabecera para filtrar paradas y trayectos.';
+        parkingNote.textContent = 'Mapa completo de Japón 2028 (Kyushu, Okinawa, Hiroshima y Nagasaki). Selecciona una ciudad o un día concreto en la cabecera para filtrar paradas y trayectos.';
       }
       container.appendChild(parkingNote);
 
@@ -369,18 +384,20 @@
             ? places.filter(p => p.region === 'okinawa' && p.type !== 'hotel')
             : filter === 'hiroshima'
               ? places.filter(p => p.region === 'hiroshima' && p.type !== 'hotel')
-              : filter === 'beppu'
-                ? places.filter(p => !['fukuoka', 'okinawa', 'hiroshima'].includes(p.region) && p.type !== 'hotel')
-                : filter === 'hotel'
-                  ? places.filter(p => p.type === 'hotel')
-                  : places.filter(p => p.day === filter);
+              : filter === 'nagasaki'
+                ? places.filter(p => p.region === 'nagasaki' && p.type !== 'hotel')
+                : filter === 'beppu'
+                  ? places.filter(p => !['fukuoka', 'okinawa', 'hiroshima', 'nagasaki'].includes(p.region) && p.type !== 'hotel')
+                  : filter === 'hotel'
+                    ? places.filter(p => p.type === 'hotel')
+                    : places.filter(p => p.day === filter);
       const bounds = [];
 
       // Dibujar rutas
       Object.keys(routesData).forEach(dayKey => {
         let showRoute = false;
         if (filter === 'all') {
-          showRoute = !['beppu', 'fukuoka', 'okinawa', 'hiroshima'].includes(dayKey);
+          showRoute = !['beppu', 'fukuoka', 'okinawa', 'hiroshima', 'nagasaki'].includes(dayKey);
         } else if (filter === 'beppu') {
           showRoute = ['day1', 'day2', 'day3'].includes(dayKey);
         } else if (filter === 'fukuoka') {
@@ -389,6 +406,8 @@
           showRoute = ['okinawa1', 'okinawa2', 'okinawa3', 'okinawa4', 'okinawa5'].includes(dayKey);
         } else if (filter === 'hiroshima') {
           showRoute = ['hiroshima1', 'hiroshima2', 'hiroshima3', 'hiroshima4'].includes(dayKey);
+        } else if (filter === 'nagasaki') {
+          showRoute = ['nagasaki1', 'nagasaki2', 'nagasaki3'].includes(dayKey);
         } else {
           showRoute = (filter === dayKey);
         }
@@ -426,7 +445,7 @@
       let previousDay = null;
       filtered.forEach(place => {
         const beppuDayTitles = { day1: 'Día 1 · Kannawa', day2: 'Día 2 · Monte y Centro', day3: 'Día 3 · Yufuin' };
-        if (['beppu', 'fukuoka', 'okinawa', 'hiroshima'].includes(filter) && place.day !== previousDay) {
+        if (['beppu', 'fukuoka', 'okinawa', 'hiroshima', 'nagasaki'].includes(filter) && place.day !== previousDay) {
           const heading = document.createElement('h2');
           heading.className = 'fukuoka-day-heading';
           heading.textContent = filter === 'beppu' ? (beppuDayTitles[place.day] || place.dayLabel) : place.dayLabel;
