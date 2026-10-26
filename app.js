@@ -107,8 +107,154 @@
     function setSelectedPlace(id) {
       Object.values(cardsMap).forEach(card => card.classList.remove('is-selected'));
       Object.values(markersMap).forEach(marker => marker.getElement()?.querySelector('.map-stop-marker')?.classList.remove('is-selected'));
-      if (cardsMap[id]) cardsMap[id].classList.add('is-selected');
-      markersMap[id]?.getElement()?.querySelector('.map-stop-marker')?.classList.add('is-selected');
+      if (id && cardsMap[id]) cardsMap[id].classList.add('is-selected');
+      if (id && markersMap[id]) markersMap[id].getElement()?.querySelector('.map-stop-marker')?.classList.add('is-selected');
+    }
+
+    const tripStructure = {
+      beppu: {
+        name: "Beppu",
+        icon: "♨️",
+        baseTitle: "Base Beppu · 3 días",
+        days: [
+          { id: "day1", tag: "D1", title: "Kannawa y Onsen", color: "#f43f5e" },
+          { id: "day2", tag: "D2", title: "Monte y Centro", color: "#0ea5e9" },
+          { id: "day3", tag: "D3", title: "Yufuin", color: "#10b981" }
+        ]
+      },
+      fukuoka: {
+        name: "Fukuoka",
+        icon: "🏙️",
+        baseTitle: "Base Fukuoka · 5 noches",
+        days: [
+          { id: "fukuoka1", tag: "F1", title: "Llegada y Nakasu", color: "#f43f5e" },
+          { id: "fukuoka2", tag: "F2", title: "Parques y Bahía", color: "#0ea5e9" },
+          { id: "fukuoka3", tag: "F3", title: "Hakata y Tenjin", color: "#14b8a6" },
+          { id: "fukuoka4", tag: "F4", title: "Dazaifu y Yanagawa", color: "#f59e0b" },
+          { id: "fukuoka5", tag: "F5", title: "Mojiko y Kokura", color: "#a855f7" },
+          { id: "fukuoka6", tag: "F6", title: "Nanzoin (Salida)", color: "#8b5cf6" }
+        ]
+      },
+      okinawa: {
+        name: "Okinawa",
+        icon: "🌺",
+        baseTitle: "Base Okinawa · 5 días",
+        days: [
+          { id: "okinawa1", tag: "O1", title: "Naha y Shuri", color: "#e56f8b" },
+          { id: "okinawa2", tag: "O2", title: "Norte y Churaumi", color: "#4788c7" },
+          { id: "okinawa3", tag: "O3", title: "Islas Kerama", color: "#8061af" },
+          { id: "okinawa4", tag: "O4", title: "Costa Central", color: "#4a9d91" },
+          { id: "okinawa5", tag: "O5", title: "Sur Sagrado", color: "#e59b39" }
+        ]
+      }
+    };
+
+    let currentBase = 'all';
+    let currentDay = 'all';
+
+    function renderDayFilterBar() {
+      const container = document.getElementById('day-filter-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (currentBase === 'all') {
+        const allBtn = document.createElement('button');
+        allBtn.className = `day-filter-btn ${currentDay === 'all' ? 'active' : ''}`;
+        allBtn.innerHTML = `🗺️ Todo el viaje (14 jornadas)`;
+        allBtn.onclick = () => filterDay('all');
+        container.appendChild(allBtn);
+
+        Object.entries(tripStructure).forEach(([baseKey, struct]) => {
+          const sep = document.createElement('span');
+          sep.className = 'day-filter-label ml-2';
+          sep.innerHTML = `${struct.icon} ${struct.name}:`;
+          container.appendChild(sep);
+
+          struct.days.forEach(d => {
+            const btn = document.createElement('button');
+            btn.className = `day-filter-btn ${currentDay === d.id ? 'active' : ''}`;
+            btn.innerHTML = `<span class="day-tag" style="background:${d.color};color:#fff">${d.tag}</span><span>${d.title}</span>`;
+            btn.onclick = () => {
+              currentBase = baseKey;
+              filterDay(d.id);
+            };
+            container.appendChild(btn);
+          });
+        });
+      } else if (['beppu', 'fukuoka', 'okinawa'].includes(currentBase)) {
+        const struct = tripStructure[currentBase];
+        const label = document.createElement('span');
+        label.className = 'day-filter-label';
+        label.innerHTML = `${struct.icon} Días en ${struct.name}:`;
+        container.appendChild(label);
+
+        const allCityBtn = document.createElement('button');
+        allCityBtn.className = `day-filter-btn ${currentDay === 'all' ? 'active' : ''}`;
+        allCityBtn.innerHTML = `Todos (${struct.days.length} jornadas)`;
+        allCityBtn.onclick = () => filterDay('all');
+        container.appendChild(allCityBtn);
+
+        struct.days.forEach(d => {
+          const btn = document.createElement('button');
+          btn.className = `day-filter-btn ${currentDay === d.id ? 'active' : ''}`;
+          btn.innerHTML = `<span class="day-tag" style="background:${d.color};color:#fff">${d.tag}</span><span>${d.title}</span>`;
+          btn.onclick = () => filterDay(d.id);
+          container.appendChild(btn);
+        });
+      } else if (currentBase === 'hotel') {
+        const label = document.createElement('span');
+        label.className = 'day-filter-label';
+        label.innerHTML = `🏨 Alojamientos:`;
+        container.appendChild(label);
+
+        const note = document.createElement('span');
+        note.className = 'text-xs text-slate-500 py-1';
+        note.textContent = 'Opciones en Beppu y base de Hakata (Kyushu)';
+        container.appendChild(note);
+      }
+    }
+
+    function updateBaseButtonsUI() {
+      document.querySelectorAll('#filter-buttons .filter-btn').forEach(btn => {
+        if (btn.dataset.filter === currentBase) {
+          btn.classList.add('ring-2', 'ring-amber-400');
+        } else {
+          btn.classList.remove('ring-2', 'ring-amber-400');
+        }
+      });
+    }
+
+    function setBaseFilter(base) {
+      currentBase = base;
+      currentDay = 'all';
+      updateBaseButtonsUI();
+      renderDayFilterBar();
+      switchTab('itinerary');
+      renderMapAndSidebar(base);
+    }
+
+    function filterDay(dayId) {
+      currentDay = dayId;
+      if (dayId !== 'all') {
+        for (const [baseKey, struct] of Object.entries(tripStructure)) {
+          if (struct.days.some(d => d.id === dayId)) {
+            currentBase = baseKey;
+            break;
+          }
+        }
+      }
+      updateBaseButtonsUI();
+      renderDayFilterBar();
+      switchTab('itinerary');
+      renderMapAndSidebar(dayId === 'all' ? currentBase : dayId);
+    }
+
+    function filterMap(filter) {
+      if (['all', 'beppu', 'fukuoka', 'okinawa', 'hotel'].includes(filter)) {
+        setBaseFilter(filter);
+      } else {
+        filterDay(filter);
+      }
     }
 
     function renderMapAndSidebar(filter = 'all') {
@@ -119,35 +265,70 @@
       Object.keys(cardsMap).forEach(id => delete cardsMap[id]);
       const container = document.getElementById('view-itinerary');
       container.innerHTML = '';
+
+      const dayDescriptions = {
+        day1: 'Beppu · Día 1: Zona termal de Kannawa, infiernos Umi y Kamado, comida al vapor volcánico en Jigoku Mushi, descanso en Hyotan Onsen y mirador de Yukemuri.',
+        day2: 'Beppu · Día 2: Vistas desde el teleférico del Monte Tsurumi, aguas medicinales de Myoban Yunosato, Chinoike Jigoku y paseo por el centro histórico y Takegawara.',
+        day3: 'Beppu · Día 3: Excursión al pueblo balneario de Yufuin, paseo por la calle Yunotsubo y entorno del lago Kinrinko.',
+        fukuoka1: 'Fukuoka · Día 1: Llegada a Hakata, paseo por la galería cubierta Kawabata, santuario Kushida y cena en los puestos yatai junto al río en Nakasu.',
+        fukuoka2: 'Fukuoka · Día 2: Ruinas del Castillo de Fukuoka y parque Maizuru, estanque de Ōhori, mirador de la Torre de Fukuoka y atardecer en Momochihama.',
+        fukuoka3: 'Fukuoka · Día 3: Hakata histórico (Gran Buda de Tōchōji, santuario Sumiyoshi), paseo por Canal City y compras por Tenjin y Daimyo.',
+        fukuoka4: 'Fukuoka · Día 4: Excursión en tren Nishitetsu al santuario Dazaifu Tenmangu, Museo Nacional de Kyushu y paseo en barca por los canales de Yanagawa.',
+        fukuoka5: 'Fukuoka · Día 5: Excursión a Kitakyushu: murallas del Castillo de Kokura y arquitectura histórica en el puerto de Mojiko Retro.',
+        fukuoka6: 'Fukuoka · Día 6: Mañana de salida opcional con visita al templo de montaña Nanzōin y su colosal Buda reclinado en Sasaguri.',
+        okinawa1: 'Okinawa · Día 1: Naha y Shuri (sin coche). Parque del Castillo de Shuri, mausoleo real Tamaudun, calzada Kinjocho, talleres cerámicos de Tsuboya y noche en Kokusai-dori.',
+        okinawa2: 'Okinawa · Día 2: Costa norte (coche de alquiler). Puente e isla de Kouri, Acuario Churaumi, sendero de árboles Fukugi de Bise y atardecer en Cabo Manzamo.',
+        okinawa3: 'Okinawa · Día 3: Excursión marítima a las islas Kerama (Zamami) desde el puerto Tomari; playas de aguas turquesas de Furuzamami y Ama (sujeto al mar).',
+        okinawa4: 'Okinawa · Día 4: Costa central (coche). Aldea alfarera Yachimun no Sato, casas tradicionales en Ryukyu Mura y tarde en American Village de Chatan.',
+        okinawa5: 'Okinawa · Día 5: Sur sagrado e histórico. Sitio sagrado Sefa-Utaki (parking separado), cueva Gyokusendo en Okinawa World, Himeyuri y Parque Memorial de la Paz.'
+      };
+
       const parkingNote = document.createElement('p');
       parkingNote.className = 'parking-date-note';
-      parkingNote.textContent = filter === 'fukuoka'
-        ? 'Base Fukuoka · 5 noches en Hakata (hotel pendiente). Aquí se agrupan los cinco días de visitas; Nanzoin queda como opción para la salida si hay tiempo. Horarios y pases de 2028 por confirmar.'
-        : filter === 'okinawa'
-          ? 'Plan basado en «Guía de Viaje a Okinawa» (34 fuentes). Base Naha: Día 1 sin coche; recógelo el Día 2 para norte, costa central y sur. Kerama queda flexible por el mar; si cancelan el ferry, intercambia ese día con una ruta terrestre. El parking separado de Sefa-Utaki aparece como P verde. Tarifas y horarios deben confirmarse para 2028.'
-        : filter === 'beppu'
-          ? 'Base Beppu · tres días: Kannawa, Monte y Centro, y Yufuin. Aquí se agrupan las visitas, los trayectos y los alojamientos de esta etapa.'
-          : filter === 'hotel'
-          ? 'Opciones de alojamiento en Beppu; el hotel de Hakata queda pendiente. Al elegirlos, ajustaremos las salidas diarias.'
-            : 'En Beppu, la insignia P indica el parking: verde = gratis; ámbar = de pago o condicionado; gris = sin parking propio o dato por confirmar. Los cuadrados naranjas son parkings separados. Tarifas consultadas el 26 oct 2026; pueden cambiar.';
+      if (dayDescriptions[filter]) {
+        parkingNote.textContent = dayDescriptions[filter];
+      } else if (filter === 'fukuoka') {
+        parkingNote.textContent = 'Base Fukuoka · 5 noches en Hakata (hotel pendiente). Cinco días de visitas y salida con Nanzoin opcional. Pases y horarios por reconfirmar para 2028.';
+      } else if (filter === 'okinawa') {
+        parkingNote.textContent = 'Base Okinawa · 5 días por la isla principal con base en Naha. Día 1 sin coche; coche desde Día 2. Excursión a Kerama flexible por el estado del mar.';
+      } else if (filter === 'beppu') {
+        parkingNote.textContent = 'Base Beppu · tres días: Kannawa, Monte y Centro, y Yufuin. Visitas, rutas y alojamientos de la etapa.';
+      } else if (filter === 'hotel') {
+        parkingNote.textContent = 'Opciones de alojamiento en Beppu; el hotel de Hakata queda pendiente. Al elegirlos, ajustaremos las salidas diarias.';
+      } else {
+        parkingNote.textContent = 'Mapa completo de Japón 2028 (Kyushu y Okinawa). Selecciona una ciudad o un día concreto en la cabecera para filtrar paradas y trayectos.';
+      }
       container.appendChild(parkingNote);
 
-      const filtered = filter === 'all' ? places : filter === 'fukuoka'
-        ? places.filter(p => p.region === 'fukuoka' && p.type !== 'hotel')
-        : filter === 'okinawa'
-          ? places.filter(p => p.region === 'okinawa' && p.type !== 'hotel')
-        : filter === 'beppu'
-          ? places.filter(p => p.region !== 'fukuoka' && p.type !== 'hotel')
-          : filter === 'hotel'
-            ? places.filter(p => p.type === 'hotel')
-            : places.filter(p => p.day === filter);
+      const filtered = filter === 'all'
+        ? places
+        : filter === 'fukuoka'
+          ? places.filter(p => p.region === 'fukuoka' && p.type !== 'hotel')
+          : filter === 'okinawa'
+            ? places.filter(p => p.region === 'okinawa' && p.type !== 'hotel')
+          : filter === 'beppu'
+            ? places.filter(p => p.region !== 'fukuoka' && p.region !== 'okinawa' && p.type !== 'hotel')
+            : filter === 'hotel'
+              ? places.filter(p => p.type === 'hotel')
+              : places.filter(p => p.day === filter);
       const bounds = [];
 
-      // Una línea continua por cada tramo; las flechas indican el sentido.
+      // Dibujar rutas
       Object.keys(routesData).forEach(dayKey => {
-        const showRoute = filter === 'all' || filter === dayKey
-          || (filter === 'beppu' && ['day1', 'day2', 'day3'].includes(dayKey));
+        let showRoute = false;
+        if (filter === 'all') {
+          showRoute = !['beppu', 'fukuoka', 'okinawa'].includes(dayKey);
+        } else if (filter === 'beppu') {
+          showRoute = ['day1', 'day2', 'day3'].includes(dayKey);
+        } else if (filter === 'fukuoka') {
+          showRoute = ['fukuoka1', 'fukuoka2', 'fukuoka3', 'fukuoka4', 'fukuoka5', 'fukuoka6'].includes(dayKey);
+        } else if (filter === 'okinawa') {
+          showRoute = ['okinawa1', 'okinawa2', 'okinawa3', 'okinawa4', 'okinawa5'].includes(dayKey);
+        } else {
+          showRoute = (filter === dayKey);
+        }
         if (!showRoute) return;
+
         (routesData[dayKey] || []).forEach(seg => {
           const lineColor = ({ car: '#368ca5', walk: '#d18b37', rail: '#8055ad', bus: '#438c7a', boat: '#3975b7' })[seg.type] || '#368ca5';
           const lineDash = seg.type === 'walk' ? '7, 8' : ['rail', 'boat'].includes(seg.type) ? '3, 7' : null;
@@ -176,13 +357,20 @@
             .addTo(routeArrowLayerGroup);
         });
       });
+
       let previousDay = null;
       filtered.forEach(place => {
+        const beppuDayTitles = { day1: 'Día 1 · Kannawa', day2: 'Día 2 · Monte y Centro', day3: 'Día 3 · Yufuin' };
         if (['beppu', 'fukuoka', 'okinawa'].includes(filter) && place.day !== previousDay) {
           const heading = document.createElement('h2');
           heading.className = 'fukuoka-day-heading';
-          const beppuDayTitles = { day1: 'Día 1 · Kannawa', day2: 'Día 2 · Monte y Centro', day3: 'Día 3 · Yufuin' };
-          heading.textContent = filter === 'beppu' ? beppuDayTitles[place.day] : place.dayLabel;
+          heading.textContent = filter === 'beppu' ? (beppuDayTitles[place.day] || place.dayLabel) : place.dayLabel;
+          container.appendChild(heading);
+          previousDay = place.day;
+        } else if (filter !== 'all' && filter !== 'hotel' && place.day !== previousDay) {
+          const heading = document.createElement('h2');
+          heading.className = 'fukuoka-day-heading';
+          heading.textContent = beppuDayTitles[place.day] || place.dayLabel;
           container.appendChild(heading);
           previousDay = place.day;
         }
@@ -207,7 +395,7 @@
             <p class="text-xs text-slate-300 leading-snug mb-2">${place.desc}</p>
             ${activityMarkup(place)}
             ${officialSourceMarkup(place)}
-          ${parkingInfoMarkup(place.id)}
+            ${parkingInfoMarkup(place.id)}
             <div class="bg-slate-900/90 p-2 rounded border border-slate-700 text-[11px] text-amber-300 mb-2">
               💡 ${place.tip}
             </div>
@@ -262,18 +450,6 @@
       }
     }
 
-    function filterMap(filter) {
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        if (btn.dataset.filter === filter) {
-          btn.classList.add('ring-2', 'ring-amber-400');
-        } else {
-          btn.classList.remove('ring-2', 'ring-amber-400');
-        }
-      });
-      switchTab('itinerary');
-      renderMapAndSidebar(filter);
-    }
-
     function switchTab(tab) {
       const itView = document.getElementById('view-itinerary');
       const tipsView = document.getElementById('view-tips');
@@ -293,17 +469,7 @@
       }
     }
 
+    renderDayFilterBar();
     renderMapAndSidebar('all');
     const initialRegionBounds = L.latLngBounds([30.5, 126.0], [37.8, 141.5]);
     map.fitBounds(initialRegionBounds, { padding: [16, 16], maxZoom: 8 });
-
-
-
-
-
-
-
-
-
-
-

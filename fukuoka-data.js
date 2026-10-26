@@ -178,23 +178,49 @@ for (const place of fukuokaPlaces) {
 }
 
 places.push(...fukuokaPlaces);
-routesData.fukuoka = [
+
+routesData.fukuoka1 = [
   { from: [33.5897, 130.4207], to: [33.5936, 130.4078], type: 'walk', duration: 'paseo urbano' },
   { from: [33.5936, 130.4078], to: [33.5931, 130.4107], type: 'walk', duration: 'unos minutos' },
-  { from: [33.5931, 130.4107], to: [33.5902, 130.4086], type: 'walk', duration: 'hacia la cena' },
+  { from: [33.5931, 130.4107], to: [33.5902, 130.4086], type: 'walk', duration: 'hacia la cena' }
+];
+
+routesData.fukuoka2 = [
   { from: [33.5897, 130.4207], to: [33.5854, 130.3850], type: 'rail', duration: 'metro y paseo' },
   { from: [33.5854, 130.3850], to: [33.5859, 130.3763], type: 'walk', duration: 'a pie' },
   { from: [33.5859, 130.3763], to: [33.5933, 130.3515], type: 'bus', duration: 'bus o metro' },
-  { from: [33.5933, 130.3515], to: [33.5960, 130.3530], type: 'walk', duration: 'a pie' },
+  { from: [33.5933, 130.3515], to: [33.5960, 130.3530], type: 'walk', duration: 'a pie' }
+];
+
+routesData.fukuoka3 = [
   { from: [33.5897, 130.4207], to: [33.5963, 130.4161], type: 'walk', duration: 'Hakata histórico' },
   { from: [33.5963, 130.4161], to: [33.5833, 130.4145], type: 'walk', duration: 'paseo y parada' },
   { from: [33.5833, 130.4145], to: [33.5898, 130.4103], type: 'walk', duration: 'hacia Canal City' },
-  { from: [33.5898, 130.4103], to: [33.5905, 130.3994], type: 'walk', duration: 'hacia Tenjin' },
+  { from: [33.5898, 130.4103], to: [33.5905, 130.3994], type: 'walk', duration: 'hacia Tenjin' }
+];
+
+routesData.fukuoka4 = [
   { from: [33.5900, 130.3990], to: [33.5215, 130.5348], type: 'rail', duration: 'Nishitetsu desde Tenjin' },
   { from: [33.5215, 130.5348], to: [33.5189, 130.5369], type: 'walk', duration: 'a pie' },
-  { from: [33.5215, 130.5348], to: [33.1647, 130.4053], type: 'rail', duration: 'tren, con transbordo' },
+  { from: [33.5215, 130.5348], to: [33.1647, 130.4053], type: 'rail', duration: 'tren, con transbordo' }
+];
+
+routesData.fukuoka5 = [
   { from: [33.5897, 130.4207], to: [33.8847, 130.8749], type: 'rail', duration: 'tren a Kokura' },
   { from: [33.8847, 130.8749], to: [33.9455, 130.9601], type: 'rail', duration: 'tren local a Mojiko' },
-  { from: [33.9455, 130.9601], to: [33.5897, 130.4207], type: 'rail', duration: 'vuelta a Hakata' },
+  { from: [33.9455, 130.9601], to: [33.5897, 130.4207], type: 'rail', duration: 'vuelta a Hakata' }
+];
+
+routesData.fukuoka6 = [
   { from: [33.5897, 130.4207], to: [33.6185, 130.5660], type: 'rail', duration: 'tren a Sasaguri' }
 ];
+
+routesData.fukuoka = [
+  ...routesData.fukuoka1,
+  ...routesData.fukuoka2,
+  ...routesData.fukuoka3,
+  ...routesData.fukuoka4,
+  ...routesData.fukuoka5,
+  ...routesData.fukuoka6
+];
+

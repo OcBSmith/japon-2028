@@ -67,6 +67,81 @@ aside > div:first-child {
 .filter-btn[data-filter="hotel"] { color: #8d67a2 !important; }
 .filter-btn.ring-2 { outline: 2px solid #d7ad64; outline-offset: 1px; }
 
+/* Sub-filtros por Día */
+#day-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 0.125rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+#day-filter-container::-webkit-scrollbar {
+  height: 4px;
+}
+#day-filter-container::-webkit-scrollbar-thumb {
+  background: #e2ded4;
+  border-radius: 4px;
+}
+
+.day-filter-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  white-space: nowrap;
+  margin-right: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.day-filter-btn {
+  border-radius: 999px !important;
+  border: 1px solid var(--line) !important;
+  background: #fffefa !important;
+  padding: 0.2rem 0.65rem !important;
+  font-size: 0.73rem !important;
+  font-weight: 500 !important;
+  color: var(--ink) !important;
+  white-space: nowrap !important;
+  transition: all 0.15s ease !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 1px 3px rgba(48, 55, 45, .03);
+}
+
+.day-filter-btn:hover {
+  background: #f5f1e8 !important;
+  border-color: #d9ae66 !important;
+  transform: translateY(-1px);
+}
+
+.day-filter-btn.active {
+  background: var(--pine) !important;
+  color: #fff !important;
+  border-color: var(--pine) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(49, 91, 73, 0.22);
+}
+
+.day-filter-btn .day-tag {
+  font-weight: 700;
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  line-height: 1;
+}
+
+.day-filter-btn.active .day-tag {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
 /* Colores de utilidades oscuras heredadas de Tailwind */
 .bg-slate-900, [class~="bg-slate-900/95"], [class~="bg-slate-900/90"] { background-color: #fffefa !important; }
 .bg-slate-950, [class~="bg-slate-950/50"] { background-color: var(--paper-deep) !important; }

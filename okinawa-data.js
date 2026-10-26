@@ -75,24 +75,36 @@ Object.assign(parkingInfo, {
   61: { summary: "Gratis · Centro de Productos Locales de Nanjo", details: "Aparcamiento gratuito para unas 150 plazas en el Centro de Productos Locales de Nanjo. Compra allí la entrada de Sefa-Utaki y camina unos 400–500 m (7–10 min) hasta el acceso. No se permite llegar en coche a la entrada del sitio sagrado. Confirmar condiciones para 2028.", source: "https://sefa.okinawa/en/", sourceLabel: "Sefa Utaki · parking y acceso oficiales" }
 });
 
-routesData.okinawa = [
+routesData.okinawa1 = [
   { from: [26.2124, 127.6792], to: [26.2171, 127.7195], type: "rail", duration: "Yui Rail + paseo" },
   { from: [26.2171, 127.7195], to: [26.2187, 127.7199], type: "walk", duration: "Tamaudun · 5 min" },
   { from: [26.2187, 127.7199], to: [26.2152, 127.7183], type: "walk", duration: "Camino Kinjocho" },
   { from: [26.2152, 127.7183], to: [26.2132, 127.6881], type: "rail", duration: "Yui Rail hacia Naha" },
-  { from: [26.2132, 127.6881], to: [26.2148, 127.6862], type: "walk", duration: "Tsuboya a Makishi" },
+  { from: [26.2132, 127.6881], to: [26.2148, 127.6862], type: "walk", duration: "Tsuboya a Makishi" }
+];
+
+routesData.okinawa2 = [
   { from: [26.2124, 127.6792], to: [26.6963, 128.0171], type: "car", duration: "Naha–Kouri · ~2 h" },
   { from: [26.6963, 128.0171], to: [26.6944, 127.8778], type: "car", duration: "Kouri–Churaumi · 30–40 min" },
   { from: [26.6944, 127.8778], to: [26.7043, 127.8794], type: "walk", duration: "Bise · 5–10 min" },
   { from: [26.7043, 127.8794], to: [26.5031, 127.8521], type: "car", duration: "A Manzamo · ~1 h, opcional" },
-  { from: [26.5031, 127.8521], to: [26.2124, 127.6792], type: "car", duration: "Vuelta a Naha · ~1 h" },
+  { from: [26.5031, 127.8521], to: [26.2124, 127.6792], type: "car", duration: "Vuelta a Naha · ~1 h" }
+];
+
+routesData.okinawa3 = [
   { from: [26.2124, 127.6792], to: [26.2227, 127.6791], type: "walk", duration: "Taxi o paseo hasta Tomari" },
   { from: [26.2227, 127.6791], to: [26.2284, 127.3036], type: "boat", duration: "Queen Zamami · 50–70 min" },
-  { from: [26.2284, 127.3036], to: [26.2227, 127.6791], type: "boat", duration: "Regreso · horario reservado" },
+  { from: [26.2284, 127.3036], to: [26.2227, 127.6791], type: "boat", duration: "Regreso · horario reservado" }
+];
+
+routesData.okinawa4 = [
   { from: [26.2124, 127.6792], to: [26.4076, 127.7541], type: "car", duration: "Naha–Yomitan · ~1 h" },
   { from: [26.4076, 127.7541], to: [26.4346, 127.7650], type: "car", duration: "Yachimun–Ryukyu Mura · ~20 min" },
   { from: [26.4346, 127.7650], to: [26.3153, 127.7574], type: "car", duration: "A Chatan · ~30 min" },
-  { from: [26.3153, 127.7574], to: [26.2124, 127.6792], type: "car", duration: "Vuelta a Naha · 40–50 min" },
+  { from: [26.3153, 127.7574], to: [26.2124, 127.6792], type: "car", duration: "Vuelta a Naha · 40–50 min" }
+];
+
+routesData.okinawa5 = [
   { from: [26.2124, 127.6792], to: [26.1691, 127.8270], type: "car", duration: "Naha–parking Sefa-Utaki · 45–50 min" },
   { from: [26.1691, 127.8270], to: [26.1712, 127.8278], type: "walk", duration: "Caminar 500 m · 7–10 min" },
   { from: [26.1712, 127.8278], to: [26.1691, 127.8270], type: "walk", duration: "Volver al coche" },
@@ -101,3 +113,12 @@ routesData.okinawa = [
   { from: [26.0924, 127.7589], to: [26.0949, 127.7167], type: "car", duration: "A Peace Memorial Park · ~15 min" },
   { from: [26.0949, 127.7167], to: [26.2124, 127.6792], type: "car", duration: "Vuelta a Naha · ~40 min" }
 ];
+
+routesData.okinawa = [
+  ...routesData.okinawa1,
+  ...routesData.okinawa2,
+  ...routesData.okinawa3,
+  ...routesData.okinawa4,
+  ...routesData.okinawa5
+];
+

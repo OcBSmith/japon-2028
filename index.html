@@ -20,34 +20,41 @@
 <body class="h-screen flex flex-col overflow-hidden">
 
   <!-- HEADER -->
-  <header class="bg-slate-900/95 border-b border-slate-800 px-4 py-3 flex flex-wrap items-center justify-between gap-3 z-20 shrink-0">
-    <div class="flex items-center gap-3">
-      <span class="text-2xl">🚗</span>
-      <div>
-        <h1 class="font-serif-jp text-lg md:text-xl font-bold tracking-wide text-amber-400">
-          JAPÓN 2028 — KYUSHU & OKINAWA
-        </h1>
-        <p class="text-xs text-slate-400">Tres bases: Beppu, Hakata y Naha · mapa, trayectos y visitas</p>
+  <header class="bg-slate-900/95 border-b border-slate-800 px-4 py-2.5 flex flex-col gap-2 z-20 shrink-0">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🚗</span>
+        <div>
+          <h1 class="font-serif-jp text-lg md:text-xl font-bold tracking-wide text-amber-400">
+            JAPÓN 2028 — KYUSHU & OKINAWA
+          </h1>
+          <p class="text-xs text-slate-400">Tres bases: Beppu, Hakata y Naha · mapa, trayectos y visitas</p>
+        </div>
+      </div>
+
+      <!-- Filtros por Base del Viaje -->
+      <div class="flex flex-wrap items-center gap-1.5" id="filter-buttons">
+        <button onclick="setBaseFilter('all')" data-filter="all" class="filter-btn ring-2 ring-amber-400 px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition">
+          🗺️ Todo el Viaje
+        </button>
+        <button onclick="setBaseFilter('beppu')" data-filter="beppu" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-rose-400 border border-rose-500/30 transition">
+          ♨️ Base Beppu · 3 días
+        </button>
+        <button onclick="setBaseFilter('fukuoka')" data-filter="fukuoka" title="Cinco noches: cinco días de visitas y el día de salida, con Nanzoin opcional si hay tiempo" aria-label="Base Fukuoka, cinco noches y seis días contando llegada y salida" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-teal-300 border border-teal-500/30 transition">
+          🏙️ Base Fukuoka · 5 noches
+        </button>
+        <button onclick="setBaseFilter('okinawa')" data-filter="okinawa" title="Cinco días por la isla principal de Okinawa, con Naha como base sugerida" aria-label="Base Okinawa, cinco días" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-indigo-500 border border-indigo-500/30 transition">
+          🌺 Base Okinawa · 5 días
+        </button>
+        <button onclick="setBaseFilter('hotel')" data-filter="hotel" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-purple-400 border border-purple-500/30 transition">
+          🏨 Alojamientos
+        </button>
       </div>
     </div>
 
-    <!-- Filtros por Base del Viaje -->
-    <div class="flex flex-wrap items-center gap-1.5" id="filter-buttons">
-      <button onclick="filterMap('all')" data-filter="all" class="filter-btn ring-2 ring-amber-400 px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition">
-        🗺️ Todo el Viaje
-      </button>
-      <button onclick="filterMap('beppu')" data-filter="beppu" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-rose-400 border border-rose-500/30 transition">
-        ♨️ Base Beppu · 3 días
-      </button>
-      <button onclick="filterMap('fukuoka')" data-filter="fukuoka" title="Cinco noches: cinco días de visitas y el día de salida, con Nanzoin opcional si hay tiempo" aria-label="Base Fukuoka, cinco noches y seis días contando llegada y salida" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-teal-300 border border-teal-500/30 transition">
-        🏙️ Base Fukuoka · 5 noches
-      </button>
-      <button onclick="filterMap('okinawa')" data-filter="okinawa" title="Cinco días por la isla principal de Okinawa, con Naha como base sugerida" aria-label="Base Okinawa, cinco días" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-indigo-500 border border-indigo-500/30 transition">
-        🌺 Base Okinawa · 5 días
-      </button>
-      <button onclick="filterMap('hotel')" data-filter="hotel" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-purple-400 border border-purple-500/30 transition">
-        🏨 Alojamientos
-      </button>
+    <!-- Barra de Sub-filtros por Día -->
+    <div id="day-filter-container" class="flex items-center gap-1.5 overflow-x-auto text-xs py-1 border-t border-slate-200/60" aria-label="Filtro de días">
+      <!-- Los botones de días se generan dinámicamente según la ciudad seleccionada -->
     </div>
   </header>
 
