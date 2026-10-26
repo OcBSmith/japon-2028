@@ -27,7 +27,7 @@ jobs:
       - name: Prepare website files
         run: |
           mkdir _site
-          cp index.html styles.css app.js places-data.js fukuoka-data.js okinawa-data.js hiroshima-data.js _site/
+          cp -r index.html styles.css *.js _site/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
