@@ -280,7 +280,7 @@
         okinawa2: 'Okinawa · Día 2: Costa norte (coche de alquiler). Puente e isla de Kouri, Acuario Churaumi, sendero de árboles Fukugi de Bise y atardecer en Cabo Manzamo.',
         okinawa3: 'Okinawa · Día 3: Excursión marítima a las islas Kerama (Zamami) desde el puerto Tomari; playas de aguas turquesas de Furuzamami y Ama (sujeto al mar).',
         okinawa4: 'Okinawa · Día 4: Costa central (coche). Aldea alfarera Yachimun no Sato, casas tradicionales en Ryukyu Mura y tarde en American Village de Chatan.',
-        okinawa5: 'Okinawa · Día 5: Sur sagrado e histórico. Sitio sagrado Sefa-Utaki (parking separado), cueva Gyokusendo en Okinawa World, Himeyuri y Parque Memorial de la Paz.'
+        okinawa5: 'Okinawa · Día 5: Sur sagrado e histórico. Sitio sagrado Sefa-Utaki (parking separado), cueva Gyokusendo en Okinawa World, Parque Memorial de la Paz en Mabuni y Museo Memorial Himeyuri en Itoman.'
       };
 
       const parkingNote = document.createElement('p');
