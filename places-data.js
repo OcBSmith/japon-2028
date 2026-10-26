@@ -26,7 +26,7 @@
         lat: 33.3155, lng: 131.4720, color: "#f43f5e", type: "attraction",
         time: "11:30 - 12:15", price: "450 ¥",
         activity: "Una de las atracciones más bizarras de Japón: una colonia de más de 80 cocodrilos gigantes tropicales y caimanes criados en piscinas alimentadas por agua termal hirviente a 99 °C envueltos en vapor denso desde el año 1923.",
-        photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Oniyama_Jigoku_Crocodile_Beppu.jpg?width=900", alt: "Cocodrilos en Oniyama Jigoku Beppu", source: "https://commons.wikimedia.org/wiki/File:Oniyama_Jigoku_Crocodile_Beppu.jpg", credit: "Wikimedia Commons" },
+        photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Oniyama_Jigoku_251123.jpg?width=900", alt: "Cocodrilos y estanques humeantes en Oniyama Jigoku Beppu", source: "https://commons.wikimedia.org/wiki/File:Oniyama_Jigoku_251123.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
         desc: "También conocido como 'Wani Jigoku' (Infierno de los Reptiles). Los reptiles viven aclimatados al trópico en pleno invierno japonés gracias a la geotermia.",
         tip: "A solo 2 minutos a pie desde Kamado Jigoku camino de Jigoku Mushi."
       },

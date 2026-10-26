@@ -6,7 +6,7 @@ const hiroshimaPlaces = [
     lat: 34.3976, lng: 132.4753, color: "#d84315", type: "start",
     city: "Hiroshima", time: "Llegada · 10:00", price: "Transporte público",
     activity: "Llegada en Shinkansen a la terminal minamoa. Parada obligatoria en el Pokémon Center Hiroshima para cazar merchandising exclusivo antes de empezar.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima%20Station%20South%20Gate%202024.jpg?width=900", alt: "Nueva terminal de la Estación de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Station_South_Gate_2024.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima_Sta_South_Exit_Area.jpg?width=900", alt: "Zona de la salida sur de la Estación de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Sta_South_Exit_Area.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "Principal centro de transporte de la prefectura. El tranvía Hiroden conecta directamente desde la planta 2 hacia el centro urbano.",
     tip: "Deja el equipaje en taquillas o en el hotel antes de comenzar la jornada."
   },
@@ -16,7 +16,7 @@ const hiroshimaPlaces = [
     lat: 34.3912, lng: 132.4610, color: "#d84315", type: "attraction",
     city: "Hiroshima", time: "11:30 - 12:45", price: "~¥1.200 - 1.800",
     activity: "Subiremos al laberíntico edificio de 4 plantas repleto con más de 20 puestos tradicionales de plancha teppan humeante compitiendo entre sí.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Okonomimura_Building_Hiroshima.jpg?width=900", alt: "Entrada del mítico edificio Okonomimura", source: "https://commons.wikimedia.org/wiki/File:Okonomimura_Building_Hiroshima.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Signboard_of_Okonomimura_Building.jpg?width=900", alt: "Cartel y fachada del emblemático edificio Okonomimura", source: "https://commons.wikimedia.org/wiki/File:Signboard_of_Okonomimura_Building.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "Una experiencia inmersiva retro: te sientas en la barra frente al cocinero para ver cómo monta el okonomiyaki en capas con fideos yakisoba crujientes.",
     tip: "Elige el puesto que más te llame la atención en las plantas 2, 3 o 4; pide el especial con queso o con ostras si te atreves."
   },
@@ -26,7 +26,7 @@ const hiroshimaPlaces = [
     lat: 34.3929, lng: 132.4526, color: "#d84315", type: "attraction",
     city: "Hiroshima", time: "13:00 - 13:45", price: "Gratis (exterior)",
     activity: "Contemplaremos el monumento Patrimonio de la Humanidad por la UNESCO que sobrevivió a escasos metros del hipocentro de la explosión del 6 de agosto de 1945.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Atomic_Bomb_Dome_in_Hiroshima_2022.jpg?width=900", alt: "Genbaku Dome iluminado al borde del río", source: "https://commons.wikimedia.org/wiki/File:Atomic_Bomb_Dome_in_Hiroshima_2022.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/A-Bomb_Dome.jpg?width=900", alt: "Cúpula de la Bomba Atómica (Genbaku Dome) en Hiroshima", source: "https://commons.wikimedia.org/wiki/File:A-Bomb_Dome.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "Antiguo Salón de Promoción Industrial. Mantiene su esqueleto metálico intacto como símbolo mundial de paz.",
     tip: "Rodéalo a pie con tranquilidad; la perspectiva desde el puente Aioi permite captar toda su magnitud."
   },
@@ -36,7 +36,7 @@ const hiroshimaPlaces = [
     lat: 34.3940, lng: 132.4533, color: "#d84315", type: "attraction",
     city: "Hiroshima", time: "13:45 - 14:45", price: "Gratis",
     activity: "Recorreremos a pie el Cenotafio para las Víctimas, la Llama de la Paz y el Monumento a la Paz de los Niños (rodeado de miles de grullas de origami).",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima_Peace_Memorial_Park_Cenotaph.jpg?width=900", alt: "Cenotafio de las víctimas con la Llama de la Paz al fondo", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial_Park_Cenotaph.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Peace_Memorial_Park_and_Cenotaph,_Hiroshima,_South_view_20190417_1.jpg?width=900", alt: "Cenotafio y llama de la paz en el Parque Conmemorativo de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Peace_Memorial_Park_and_Cenotaph,_Hiroshima,_South_view_20190417_1.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
     desc: "Diseñado por Kenzo Tange. La historia de Sadako Sasaki y sus 1.000 grullas de papel es el alma emotiva del parque.",
     tip: "Alinea la vista del Cenotafio para ver enmarcada la Llama de la Paz y la Cúpula al fondo."
   },
@@ -46,7 +46,7 @@ const hiroshimaPlaces = [
     lat: 34.3916, lng: 132.4523, color: "#d84315", type: "attraction",
     city: "Hiroshima", time: "14:45 - 16:45", price: "¥200 adulto",
     activity: "Visita sobria e indispensable a las exposiciones del edificio principal y este, con testimonios, fotografías y pertenencias de supervivientes (hibakusha).",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima_Peace_Memorial_Museum_Building.jpg?width=900", alt: "Fachada del Museo de la Paz de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial_Museum_Building.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima_Peace_Memorial_Museum_2008_01.JPG?width=900", alt: "Fachada del Museo Conmemorativo de la Paz de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial_Museum_2008_01.JPG", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "El testimonio histórico más conmovedor de Japón. La audioguía en español aporta un contexto sobrecogedor.",
     tip: "Calcula dos horas completas para recorrerlo con calma y respeto antes de cambiar de tercio."
   },
@@ -56,7 +56,7 @@ const hiroshimaPlaces = [
     lat: 34.3951, lng: 132.4542, color: "#d84315", type: "attraction",
     city: "Hiroshima", time: "17:00 - 18:00", price: "¥2.200 adulto",
     activity: "Subiremos al mirador de madera al aire libre con vistas directas a la Cúpula... ¡y bajaremos por el tobogán gigante en espiral interior!",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Orizuru_Tower_Hiroshima.jpg?width=900", alt: "Vistas panorámicas desde el mirador de la Torre Orizuru", source: "https://commons.wikimedia.org/wiki/File:Orizuru_Tower_Hiroshima.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/HIROSHIMA_ORIZURU_TOWER_2016-0923-1.jpg?width=900", alt: "Edificio y mirador de la Torre Orizuru de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:HIROSHIMA_ORIZURU_TOWER_2016-0923-1.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
     desc: "Un rascacielos vanguardista con una cafetería panorámica, un conducto acristalado para soltar grullas de origami y un divertido tobogán de evacuación lúdico.",
     tip: "No bajes en ascensor: pide la esterilla para lanzarte por el tobogán de varias plantas."
   },
@@ -108,7 +108,7 @@ const hiroshimaPlaces = [
     lat: 34.2988, lng: 132.3218, color: "#ea580c", type: "attraction",
     city: "Miyajima, Hiroshima", time: "11:15 - 13:00", price: "Según consumo",
     activity: "Safari gastronómico bizarro: probaremos Pettara Pottara (mochi a la brasa con una ostra entera caramelizada), el koppe-pan relleno entero de Okonomiyaki en Bakery Katsutani-pan, el pastel Age-Momiji frito en brocheta y veremos la colosal Pala de Arroz de Godzilla de 7,7 metros.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Omotesando_Shotengai_Miyajima.jpg?width=900", alt: "Calle comercial Omotesando en la isla de Miyajima", source: "https://commons.wikimedia.org/wiki/File:Omotesando_Shotengai_Miyajima.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Miyajima_Deer_Sep08.jpg?width=900", alt: "Ciervo sika libre en la concurrida calle de Miyajima", source: "https://commons.wikimedia.org/wiki/File:Miyajima_Deer_Sep08.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "Puestos callejeros llenos de creatividad loca, ostras gratinadas con queso y el estanque secreto de carpas gigantes al fondo de la tienda Daikonya.",
     tip: "Pide el Age-Momiji relleno de queso o chocolate recién salido de la freidora."
   },
@@ -118,7 +118,7 @@ const hiroshimaPlaces = [
     lat: 34.2934, lng: 132.3157, color: "#ea580c", type: "attraction",
     city: "Miyajima, Hiroshima", time: "13:15 - 14:45", price: "Entrada libre",
     activity: "El templo más insólito de la isla: 500 estatuas de piedra con gorros de lana, ruedas giratorias mecánicas de sutras y la experiencia Tadan-do: caminar a tientas en completa y absoluta oscuridad subterránea para 'renacer'.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Daisho-in_Temple_Miyajima_Statues.jpg?width=900", alt: "Estatuas de monjes Rakan con gorritos de lana en Daisho-in", source: "https://commons.wikimedia.org/wiki/File:Daisho-in_Temple_Miyajima_Statues.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Miyajima,_daisho-in,_05.jpg?width=900", alt: "Escalinata y faroles del templo budista Daisho-in en Miyajima", source: "https://commons.wikimedia.org/wiki/File:Miyajima,_daisho-in,_05.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "Un complejo budista esotérico fascinante encaramado en la ladera del bosque sagrado.",
     tip: "Quítate los zapatos para entrar en la cámara subterránea a oscuras: apoya la mano izquierda en la pared y déjate llevar."
   },
@@ -128,7 +128,7 @@ const hiroshimaPlaces = [
     lat: 34.2796, lng: 132.3194, color: "#ea580c", type: "attraction",
     city: "Miyajima, Hiroshima", time: "15:00 - 17:30", price: "¥2.000 teleférico ida/vuelta",
     activity: "Subiremos en el teleférico por el valle de Momijidani hasta el mirador de Misen (535 m) y visitaremos el fuego sagrado eterno del templo Reikado (con el que se encendió la Llama de la Paz).",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Misen_Observatory_View.jpg?width=900", alt: "Vistas del Mar Interior de Seto desde el observatorio del Monte Misen", source: "https://commons.wikimedia.org/wiki/File:Mount_Misen_Observatory_View.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Misen-01.jpg?width=900", alt: "Vistas panorámicas desde la cima del Monte Misen en Miyajima", source: "https://commons.wikimedia.org/wiki/File:Mount_Misen-01.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "El punto más alto de la isla sagrada con vistas panorámicas sobre las islas del Mar Interior de Seto.",
     tip: "Comprueba el horario del último viaje de bajada del teleférico para no tener que descender a pie de noche."
   },
@@ -150,7 +150,7 @@ const hiroshimaPlaces = [
     lat: 34.4039, lng: 132.4593, color: "#f59e0b", type: "attraction",
     city: "Hiroshima", time: "09:30 - 11:30", price: "¥370 torre principal",
     activity: "Exploraremos el castillo feudal samurái, el foso con peces y los misteriosos árboles hibakujumoku que sobrevivieron a la onda expansiva nuclear.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima_Castle_Keep_2021.jpg?width=900", alt: "Torre principal de madera del Castillo de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Castle_Keep_2021.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima_Castle_Keep_Tower.jpg?width=900", alt: "Torre principal de madera del Castillo de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Castle_Keep_Tower.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "Fortaleza fundada en 1589 por Mori Terumoto rodeada por murallas ciclópeas y naturaleza.",
     tip: "Busca el eucalipto superviviente señalizado en el recinto a solo 740 m del hipocentro."
   },
@@ -160,7 +160,7 @@ const hiroshimaPlaces = [
     lat: 34.4005, lng: 132.4678, color: "#f59e0b", type: "attraction",
     city: "Hiroshima", time: "11:45 - 13:00", price: "¥260 adulto",
     activity: "Paseo entre paisajes tradicionales en miniatura: estanques con carpas koi gigantes, casas de té y el puente de piedra curvado Koko-kyo.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Shukkeien_Garden_Bridge_Hiroshima.jpg?width=900", alt: "Puente de piedra sobre el estanque del Jardín Shukkei-en", source: "https://commons.wikimedia.org/wiki/File:Shukkeien_Garden_Bridge_Hiroshima.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Shukkeien_Kokokyo.JPG?width=900", alt: "Puente Kokokyo de piedra curvado sobre el estanque en el Jardín Shukkei-en", source: "https://commons.wikimedia.org/wiki/File:Shukkeien_Kokokyo.JPG", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "Jardín señorial de 1620 con rincones idóneos para desconectar y tomar fotos.",
     tip: "A solo 10 minutos a pie desde la puerta este del castillo."
   },
@@ -180,7 +180,7 @@ const hiroshimaPlaces = [
     lat: 34.3905, lng: 132.4628, color: "#f59e0b", type: "attraction",
     city: "Hiroshima", time: "14:45 - 17:30", price: "Compras",
     activity: "Veremos el nuevo y futurista estadio ribereño EDION Peace Wing y luego nos sumergiremos en el delirante laberinto de Don Quijote: varias plantas de chuches estrafalarias, juguetes kitsch, disfraces y cosmética bizarra.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Edion_Peace_Wing_Hiroshima_Exterior.jpg?width=900", alt: "Exterior del nuevo estadio EDION Peace Wing Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Edion_Peace_Wing_Hiroshima_Exterior.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Edion_Peace_Wing_Hiroshima.jpg?width=900", alt: "Nuevo estadio de fútbol ribereño EDION Peace Wing Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Edion_Peace_Wing_Hiroshima.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
     desc: "El contraste absoluto entre la arquitectura cívica moderna y el caos consumista más divertido de Japón.",
     tip: "Aprovecha para comprar snacks de KitKat con sabores exclusivos de Japón y productos de broma."
   },
@@ -190,7 +190,7 @@ const hiroshimaPlaces = [
     lat: 34.3972, lng: 132.4727, color: "#f59e0b", type: "attraction",
     city: "Hiroshima", time: "18:00 - 22:00", price: "Izakaya según consumo",
     activity: "Ruta nocturna de bares diminutos en el barrio de Ekinishi: casas de madera de la posguerra con tabernas de 5 o 6 taburetes, farolillos rojos y tapas creativas.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ekinishi_Alley_Hiroshima_Night.jpg?width=900", alt: "Farolillos y tabernas en las callejuelas de Ekinishi", source: "https://commons.wikimedia.org/wiki/File:Ekinishi_Alley_Hiroshima_Night.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Night_view_in_Hondori,_Naka,_Hiroshima.jpg?width=900", alt: "Ambiente nocturno e iluminación urbana en las calles de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Night_view_in_Hondori,_Naka,_Hiroshima.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
     desc: "Un ambiente subterráneo y acogedor donde entablas conversación con el dueño y los clientes mientras catas sakes locales de la prefectura.",
     tip: "Pide sake de Saijo servido en copa desbordante (mokkiri) y brochetas de carne local."
   },
@@ -222,7 +222,7 @@ const hiroshimaPlaces = [
     lat: 34.3976, lng: 132.4753, color: "#10b981", type: "attraction",
     city: "Hiroshima", time: "14:30 - 17:00", price: "Compras y comida",
     activity: "Últimas compras gastronómicas en ekie y minamoa: el adictivo Nama Momiji (pastel con textura mochi de Nishikido), bento de sushi y brindis final en la azotea ajardinada Soramore Plaza antes del Shinkansen.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima_Station_Building_minamoa.jpg?width=900", alt: "Complejo comercial y estación minamoa de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Station_Building_minamoa.jpg", credit: "Wikimedia Commons" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima_Sta_South_Exit_Area.jpg?width=900", alt: "Complejo comercial y estación minamoa de Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima_Sta_South_Exit_Area.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "El gran hub de diseño, cafeterías y gastronomía de Hiroshima, con vistas abiertas sobre las vías del tren bala.",
     tip: "El Nama Momiji tiene caducidad corta porque es artesanal; cómpralo fresco para degustar."
   }

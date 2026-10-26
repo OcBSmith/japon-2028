@@ -107,7 +107,7 @@ const fukuokaPlaces = [
     title: "Gundam Park Fukuoka & Estatua 1:1 ν Gundam (LaLaport)", jp: "三井ショッピングパーク ららぽーと福岡・実物大νガンダム", lat: 33.5529, lng: 130.4418, color: "#14b8a6", type: "attraction",
     city: "Fukuoka", time: "15:30 - 17:45", price: "Gratis exterior / compras",
     activity: "Peregrinación friki imprescindible: nos colocaremos a los pies de la estatua a escala real 1:1 de 24,8 metros de altura del RX-93ff ν Gundam (¡que mueve la cabeza y el brazo con espectáculos de luces y sonido!), y exploraremos The Gundam Base Fukuoka y la macro-sala arcade de Namco.",
-    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/RX-93ff_%CE%BD_Gundam_in_Lalaport_Fukuoka_20220504.jpg?width=900", alt: "Estatua gigante a escala real RX-93ff ν Gundam en LaLaport Fukuoka", source: "https://commons.wikimedia.org/wiki/File:RX-93ff_%CE%BD_Gundam_in_Lalaport_Fukuoka_20220504.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/LaLaport_Fukuoka_FlowerPark_Entrance.jpg?width=900", alt: "Entrada principal y plaza exterior del complejo Mitsui Shopping Park LaLaport Fukuoka", source: "https://commons.wikimedia.org/wiki/File:LaLaport_Fukuoka_FlowerPark_Entrance.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
     desc: "Uno de los únicos robots mecha gigantes a tamaño real del planeta y la gran meca otaku de Kyushu.",
     tip: "Autobús directo frecuente desde la estación de Hakata hasta la puerta de LaLaport (aprox. 20 min)."
   },
