@@ -117,9 +117,9 @@
         icon: "♨️",
         baseTitle: "Base Beppu · 3 días",
         days: [
-          { id: "day1", tag: "D1", title: "Kannawa y Onsen", color: "#f43f5e" },
-          { id: "day2", tag: "D2", title: "Monte y Centro", color: "#0ea5e9" },
-          { id: "day3", tag: "D3", title: "Yufuin", color: "#10b981" }
+          { id: "day1", tag: "D1", title: "Cocodrilos y Cocina Volcánica", color: "#f43f5e" },
+          { id: "day2", tag: "D2", title: "Monte, Momias de Arena y Sangre", color: "#0ea5e9" },
+          { id: "day3", tag: "D3", title: "Yufuin Ghibli & Lago", color: "#10b981" }
         ]
       },
       fukuoka: {
@@ -127,11 +127,11 @@
         icon: "🏙️",
         baseTitle: "Base Fukuoka · 5 noches",
         days: [
-          { id: "fukuoka1", tag: "F1", title: "Llegada y Nakasu", color: "#f43f5e" },
+          { id: "fukuoka1", tag: "F1", title: "Yatai & Ramen Callejero", color: "#f43f5e" },
           { id: "fukuoka2", tag: "F2", title: "Parques y Bahía", color: "#0ea5e9" },
-          { id: "fukuoka3", tag: "F3", title: "Hakata y Tenjin", color: "#14b8a6" },
+          { id: "fukuoka3", tag: "F3", title: "Gundam 1:1, Mandarake & Ramen", color: "#14b8a6" },
           { id: "fukuoka4", tag: "F4", title: "Dazaifu y Yanagawa", color: "#f59e0b" },
-          { id: "fukuoka5", tag: "F5", title: "Mojiko y Kokura", color: "#a855f7" },
+          { id: "fukuoka5", tag: "F5", title: "Mojiko Yaki-Curry & Kokura", color: "#a855f7" },
           { id: "fukuoka6", tag: "F6", title: "Nanzoin (Salida)", color: "#8b5cf6" }
         ]
       },
@@ -140,11 +140,11 @@
         icon: "🌺",
         baseTitle: "Base Okinawa · 5 días",
         days: [
-          { id: "okinawa1", tag: "O1", title: "Naha y Shuri", color: "#e56f8b" },
+          { id: "okinawa1", tag: "O1", title: "Shuri, Habu-shu & Pokémon", color: "#e56f8b" },
           { id: "okinawa2", tag: "O2", title: "Norte y Churaumi", color: "#4788c7" },
-          { id: "okinawa3", tag: "O3", title: "Islas Kerama", color: "#8061af" },
-          { id: "okinawa4", tag: "O4", title: "Costa Central", color: "#4a9d91" },
-          { id: "okinawa5", tag: "O5", title: "Sur Sagrado", color: "#e59b39" }
+          { id: "okinawa3", tag: "O3", title: "Islas Kerama & Snorkel", color: "#8061af" },
+          { id: "okinawa4", tag: "O4", title: "American Village Retro-Kitsch", color: "#4a9d91" },
+          { id: "okinawa5", tag: "O5", title: "Sur Sagrado, Cuevas y Serpientes", color: "#e59b39" }
         ]
       },
       hiroshima: {
@@ -152,10 +152,10 @@
         icon: "⛩️",
         baseTitle: "Base Hiroshima · 4 días",
         days: [
-          { id: "hiroshima1", tag: "H1", title: "Paz y Orizuru", color: "#d84315" },
-          { id: "hiroshima2", tag: "H2", title: "Isla de Miyajima", color: "#ea580c" },
-          { id: "hiroshima3", tag: "H3", title: "Castillo y Jardín", color: "#f59e0b" },
-          { id: "hiroshima4", tag: "H4", title: "Iwakuni y minamoa", color: "#10b981" }
+          { id: "hiroshima1", tag: "H1", title: "Paz, Otaku & Pizza Vending", color: "#d84315" },
+          { id: "hiroshima2", tag: "H2", title: "Miyajima Bizarra & Templo Oscuro", color: "#ea580c" },
+          { id: "hiroshima3", tag: "H3", title: "Samuráis, Donki & Ekinishi", color: "#f59e0b" },
+          { id: "hiroshima4", tag: "H4", title: "165 Helados & Serpientes Sagradas", color: "#10b981" }
         ]
       }
     };
@@ -278,24 +278,24 @@
       container.innerHTML = '';
 
       const dayDescriptions = {
-        day1: 'Beppu · Día 1: Zona termal de Kannawa, infiernos Umi y Kamado, comida al vapor volcánico en Jigoku Mushi, descanso en Hyotan Onsen y mirador de Yukemuri.',
-        day2: 'Beppu · Día 2: Vistas desde el teleférico del Monte Tsurumi, aguas medicinales de Myoban Yunosato, Chinoike Jigoku y paseo por el centro histórico y Takegawara.',
-        day3: 'Beppu · Día 3: Excursión al pueblo balneario de Yufuin, paseo por la calle Yunotsubo y entorno del lago Kinrinko.',
-        fukuoka1: 'Fukuoka · Día 1: Llegada a Hakata, paseo por la galería cubierta Kawabata, santuario Kushida y cena en los puestos yatai junto al río en Nakasu.',
-        fukuoka2: 'Fukuoka · Día 2: Ruinas del Castillo de Fukuoka y parque Maizuru, estanque de Ōhori, mirador de la Torre de Fukuoka y atardecer en Momochihama.',
-        fukuoka3: 'Fukuoka · Día 3: Hakata histórico (Gran Buda de Tōchōji, santuario Sumiyoshi), paseo por Canal City y compras por Tenjin y Daimyo.',
-        fukuoka4: 'Fukuoka · Día 4: Excursión en tren Nishitetsu al santuario Dazaifu Tenmangu, Museo Nacional de Kyushu y paseo en barca por los canales de Yanagawa.',
-        fukuoka5: 'Fukuoka · Día 5: Excursión a Kitakyushu: murallas del Castillo de Kokura y arquitectura histórica en el puerto de Mojiko Retro.',
-        fukuoka6: 'Fukuoka · Día 6: Mañana de salida opcional con visita al templo de montaña Nanzōin y su colosal Buda reclinado en Sasaguri.',
-        okinawa1: 'Okinawa · Día 1: Naha y Shuri (sin coche). Parque del Castillo de Shuri, mausoleo real Tamaudun, calzada Kinjocho, talleres cerámicos de Tsuboya y noche en Kokusai-dori.',
-        okinawa2: 'Okinawa · Día 2: Costa norte (coche de alquiler). Puente e isla de Kouri, Acuario Churaumi, sendero de árboles Fukugi de Bise y atardecer en Cabo Manzamo.',
-        okinawa3: 'Okinawa · Día 3: Excursión marítima a las islas Kerama (Zamami) desde el puerto Tomari; playas de aguas turquesas de Furuzamami y Ama (sujeto al mar).',
-        okinawa4: 'Okinawa · Día 4: Costa central (coche). Aldea alfarera Yachimun no Sato, casas tradicionales en Ryukyu Mura y tarde en American Village de Chatan.',
-        okinawa5: 'Okinawa · Día 5: Sur sagrado e histórico. Sitio sagrado Sefa-Utaki (parking separado), cueva Gyokusendo en Okinawa World, Parque Memorial de la Paz en Mabuni y Museo Memorial Himeyuri en Itoman.',
-        hiroshima1: 'Hiroshima · Día 1: Eje de la Paz. Estación minamoa, okonomiyaki teppan, Cúpula de la Bomba Genbaku Dome, Parque Conmemorativo, Museo de la Paz, Torre Orizuru y galería Hondori.',
-        hiroshima2: 'Hiroshima · Día 2: Isla Sagrada de Miyajima. Tren y ferry con vistas al Gran Torii flotante, Santuario Itsukushima, ostras en Omotesando, teleférico al Monte Misen y cena de Anago-meshi.',
-        hiroshima3: 'Hiroshima · Día 3: Castillo Feudal y Tradición. Fortaleza histórica de Hiroshima y árboles supervivientes (hibakujumoku), jardín tradicional Shukkei-en, estadio EDION Peace Wing y cena en Ekinishi.',
-        hiroshima4: 'Hiroshima · Día 4: Excursión al histórico Puente Kintai-kyo en Iwakuni (cinco arcos de madera sin clavos), regreso a la estación de Hiroshima, compras en minamoa / ekie y terraza Soramore Plaza.'
+        day1: 'Beppu · Día 1 (Cocodrilos y Cocina Volcánica): Infierno azul Umi Jigoku (98°C), fumarolas de Kamado Jigoku, la bizarra colonia de 80 cocodrilos tropicales en aguas volcánicas de Oniyama Jigoku, cocinar con guantes en las chimeneas geotérmicas de Jigoku Mushi Kobo, descanso en Hyotan Onsen (3★ Michelin) y mirador de vapor de Yukemuri.',
+        day2: 'Beppu · Día 2 (Monte, Momias de Arena y Sangre): Subida en teleférico al monte Tsurumi, cabañas de azufre medicinal en Myoban Yunosato, el estanque rojo sangre de Chinoike Jigoku con su pomada milagrosa de barro, enterrarse en arena negra volcánica caliente en el histórico Takegawara Onsen y cena de toriten crujiente en Toyotsune.',
+        day3: 'Beppu · Día 3 (Yufuin Ghibli & Lago): Cueva de vapor con hierbas medicinales en Kannawa Mushi-yu, excursión escénica a Yufuin, paseo por la delirante aldea de fantasía Yufuin Floral Village (inspirada en Studio Ghibli con tiendas frikis y búhos) y entorno humeante del lago Kinrin.',
+        fukuoka1: 'Fukuoka · Día 1 (Llegada & Yatai Callejeros): Llegada a Hakata, paseo por la galería Kawabata, santuario Kushida y cena hombro con hombro en los míticos carritos yatai junto al río en Nakasu con ramen tonkotsu hiperdenso, mentaiko tamagoyaki flambeado y brochetas yakitori.',
+        fukuoka2: 'Fukuoka · Día 2 (Parques y Bahía): Ruinas del Castillo de Fukuoka y parque Maizuru, estanque de Ōhori, mirador acristalado de la Torre de Fukuoka y atardecer frente al mar en Momochihama.',
+        fukuoka3: 'Fukuoka · Día 3 (Gundam 1:1, Mandarake & Ramen): Gran Buda sentado de Tōchōji y su túnel a oscuras, santuario Sumiyoshi, almuerzo en el Ramen Stadium de Canal City (8 maestros compitiendo) y tiendas Jump Shop, peregrinación a los pies del colosal mecha a escala real 1:1 RX-93ff ν Gundam (24.8 m con luces y movimiento en LaLaport), safari otaku en Mandarake Fukuoka (videojuegos retro y manga vintage) y cena en Daimyo/Tenjin.',
+        fukuoka4: 'Fukuoka · Día 4 (Dazaifu & Yanagawa): Excursión en tren Nishitetsu al santuario Dazaifu Tenmangu, museo nacional, y navegación en barca tradicional por los canales arbolados de Yanagawa degustando anguila al vapor seiro-mushi.',
+        fukuoka5: 'Fukuoka · Día 5 (Mojiko Yaki-Curry & Kokura): Murallas feudales del Castillo de Kokura y paseo nostálgico por el puerto histórico de Mojiko Retro para devorar el mítico plato bizarro Yaki Curry (curry horneado con queso fundido y huevo en cazuela caliente).',
+        fukuoka6: 'Fukuoka · Día 6 (Nanzoin Salida): Mañana de salida opcional para visitar el impresionante templo de montaña Nanzōin y su gigantesco Buda de bronce reclinado de 41 metros.',
+        okinawa1: 'Okinawa · Día 1 (Shuri, Habu-shu & Pokémon): Palacio y murallas reales de Shuri, mausoleo Tamaudun, calzada empedrada Kinjocho, cerámica artesanal en Tsuboya y noche en la extravagante Kokusai-dori: caza de botellas del licor bizarro Habu-shu con la víbora entera dentro, helados locos de Blue Seal (sal marina o boniato morado), sándwich Potama de carne SPAM recién frita y regalos frikis de Pokémon Okinawa.',
+        okinawa2: 'Okinawa · Día 2 (Costa Norte & Churaumi): Excursión en coche cruzando el puente panorámico de Kouri, los gigantescos tiburones ballena del acuario Churaumi, sendero tradicional de árboles Fukugi en Bise y atardecer en el acantilado con forma de elefante de Cabo Manzamo.',
+        okinawa3: 'Okinawa · Día 3 (Islas Kerama & Snorkel): Salida en ferry desde el puerto Tomari a la isla Zamami; snorkel en las aguas turquesas "Kerama Blue" de Furuzamami y avistamiento de tortugas marinas en la playa Ama (sujeto al estado del mar).',
+        okinawa4: 'Okinawa · Día 4 (American Village Retro-Kitsch): Talleres de cerámica en Yachimun no Sato, casas tradicionales y danzas eisa en Ryukyu Mura, y tarde-noche en Mihama American Village: neones gigantes de los 80, tiendas vintage militares y de cultura pop, recreativos japoneses y cena frente al mar.',
+        okinawa5: 'Okinawa · Día 5 (Sur Sagrado, Cuevas y Serpientes): Senda sagrada en Sefa-Utaki frente a la isla divina, descenso a la cueva de estalactitas de Gyokusendo y visita al curioso Habu Park (museo de serpientes y destilería tradicional de víboras) en Okinawa World, Parque de la Paz en Mabuni y memorial Himeyuri en Itoman.',
+        hiroshima1: 'Hiroshima · Día 1 (Paz, Otaku & Pizza Vending): Llegada a la nueva terminal minamoa y visita al Pokémon Center, Cúpula de la Bomba Atómica (Genbaku Dome), Parque Conmemorativo, Museo de la Paz, mirador de la Torre Orizuru con su tobogán espiral de madera gigante, banquete en el laberinto de 4 plantas de Okonomimura, safari otaku en Hondori (Animate, Lashinbang y la delirante tienda Village Vanguard), cabinas antisociales de Ichiran y la máquina callejera de pizzas recién horneadas.',
+        hiroshima2: 'Hiroshima · Día 2 (Miyajima Bizarra & Templo Oscuro): Ferry con vistas al Gran Torii flotante, pasarelas de Itsukushima entre ciervos sika, safari de street food bizarro en Omotesando (Pettara Pottara con ostra caramelizada, panecillo de okonomiyaki completo, Age-Momiji frito y la colosal pala de arroz de Godzilla de 7,7 m), adentrarse a ciegas en la oscuridad absoluta de la cueva Tadan-do en Daisho-in entre 500 estatuas con gorros de lana, teleférico al monte Misen y cóctel de ron con ositos Haribo en Bar Gebura.',
+        hiroshima3: 'Hiroshima · Día 3 (Samuráis, Donki & Ekinishi): Fortaleza samurái del Castillo de Hiroshima y árboles que sobrevivieron a la bomba atómica, jardín tradicional Shukkei-en, desafío picante de Shirunashi Tantanmen King-ken (fideos con pimienta sansho anestésica al gusto), inmersión kitsch en el macro-bazar de Don Quijote Hacchobori y ruta clandestina nocturna por las tabernas en miniatura de los callejones de la posguerra de Ekinishi.',
+        hiroshima4: 'Hiroshima · Día 4 (165 Helados & Serpientes Sagradas): Excursión al histórico puente samurái de madera de cinco arcos Kintai-kyo en Iwakuni, reto gastronómico extremo en Musashi Soft Cream (165 sabores bizarros: wasabi, curry, ajo, ramen, natto o salsa de soja), visita a las míticas serpientes albinas sagradas Shirohebi veneradas por la fortuna y compras de despedida con dulces Nama Momiji en minamoa / ekie.'
       };
 
       const parkingNote = document.createElement('p');
