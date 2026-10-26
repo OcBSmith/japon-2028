@@ -60,12 +60,21 @@ const fukuokaPlaces = [
     tip: "Revisaremos visibilidad, horario y precio de entrada cuando se acerque el viaje."
   },
   {
-    id: 27, code: "F2-4", shortName: "Playa Momochi", day: "fukuoka2", region: "fukuoka", dayLabel: "Día 2 · parques y bahía",
+    id: 39, code: "F2-4", shortName: "BOSS E·ZO FUKUOKA", day: "fukuoka2", region: "fukuoka", dayLabel: "Día 2 · parques y bahía",
+    title: "BOSS E·ZO FUKUOKA · teamLab Forest & Tobogán Gigante SubeZO (Especial niños 12 años)", jp: "BOSS E・ZO FUKUOKA・チームラボフォレスト・すべZO", lat: 33.5954, lng: 130.3621, color: "#0ea5e9", type: "attraction",
+    city: "Fukuoka", time: "16:00 - 18:30", price: "teamLab: ~¥2.400 / SubeZO: ~¥1.000",
+    activity: "El gran paraíso de adrenalina y arte digital para chicos de 12 años: nos lanzaremos por 'SubeZO' (un alucinante tobogán tubular transparente de 100 metros de longitud que serpentea por la fachada exterior del edificio desde 40 metros de altura a toda velocidad, apto a partir de 10 años / 130 cm), y nos sumergiremos en 'teamLab Forest Fukuoka' (museo digital interactivo donde cazas criaturas virtuales en 3D con el móvil en el 'Catching Forest' y saltas por acrobacias de luz en el 'Athletics Forest').",
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/E-zo_fukuoka.jpg?width=900", alt: "Fachada del complejo de ocio BOSS E-ZO FUKUOKA junto al PayPay Dome", source: "https://commons.wikimedia.org/wiki/File:E-zo_fukuoka.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
+    desc: "Complejo de entretenimiento vanguardista de 7 plantas pegado al PayPay Dome, con simuladores virtuales de béisbol, escalada y realidad virtual.",
+    tip: "A solo 10 minutos a pie de la Torre de Fukuoka y Momochi. Para SubeZO se exige calzado deportivo cerrado."
+  },
+  {
+    id: 27, code: "F2-5", shortName: "Playa Momochi", day: "fukuoka2", region: "fukuoka", dayLabel: "Día 2 · parques y bahía",
     title: "Paseo por Momochihama", jp: "百道浜", lat: 33.5960, lng: 130.3530, color: "#0ea5e9", type: "attraction",
     city: "Fukuoka", time: "Atardecer", price: "Paseo",
     activity: "Terminaremos el día junto a la playa artificial y el complejo Marizon sobre el mar para ver el atardecer.",
     desc: "Paseo marítimo al lado de la Torre de Fukuoka.",
-    tip: "Combina bien con la torre; no hace falta cambiar de zona."
+    tip: "Combina bien con la torre y BOSS E-ZO; no hace falta cambiar de zona."
   },
   {
     id: 34, code: "F3-1", shortName: "Templo Tōchōji", day: "fukuoka3", region: "fukuoka", dayLabel: "Día 3 · Hakata friki, Gundam y Tenjin",
@@ -199,7 +208,8 @@ routesData.fukuoka2 = [
   { from: [33.5897, 130.4207], to: [33.5854, 130.3850], type: 'rail', duration: 'metro y paseo' },
   { from: [33.5854, 130.3850], to: [33.5859, 130.3763], type: 'walk', duration: 'a pie' },
   { from: [33.5859, 130.3763], to: [33.5933, 130.3515], type: 'bus', duration: 'bus o metro' },
-  { from: [33.5933, 130.3515], to: [33.5960, 130.3530], type: 'walk', duration: 'a pie' }
+  { from: [33.5933, 130.3515], to: [33.5954, 130.3621], type: 'walk', duration: '10 min a pie a BOSS E-ZO' },
+  { from: [33.5954, 130.3621], to: [33.5960, 130.3530], type: 'walk', duration: 'a pie a la playa' }
 ];
 
 routesData.fukuoka3 = [
