@@ -49,6 +49,7 @@ const okinawaPhotos = {
   48: okinawaCommonsPhoto("Ryukyu Mura village area entrance.jpg", "Entrada a la aldea tradicional de Ryukyu Mura", "Yuet Man Lee"),
   49: okinawaCommonsPhoto("USMC-110807-M-JG138-033.jpg", "Fachadas coloridas de American Village en Chatan", "U.S. Marine Corps"),
   57: okinawaCommonsPhoto("Sefa Utaki 2009 (7462).jpg", "Rocas y vegetación del santuario Sefa-Utaki"),
+  61: okinawaCommonsPhoto("Okinawa Nanjo Sefa-utaki Gusuku site 01.jpg", "Entorno del Centro de Productos Locales de Nanjo y acceso a Sefa-Utaki"),
   44: okinawaCommonsPhoto("Gyokusendo Nanjo Okinawa Japan02s3104.jpg", "Formaciones de estalactitas dentro de la cueva Gyokusendo", "663highland"),
   45: okinawaCommonsPhoto("Himeyuri Peace Museum.jpg", "Exterior del Museo de la Paz Himeyuri"),
   46: okinawaCommonsPhoto("Okinawa Cornerstone-of-Peace.jpg", "Monumento Cornerstone of Peace en el parque memorial de Okinawa")

@@ -67,7 +67,9 @@
         title: "Inicio de ruta: Kannawa", jp: "鉄輪",
         lat: 33.3168, lng: 131.4686, color: "#0ea5e9", type: "start",
         time: "09:00", price: "Salida",
-        desc: "Punto de partida aproximado para conducir hasta el teleférico de Beppu.",
+        activity: "Punto de partida matutino en el distrito termal de Kannawa entre columnas de vapor blanco.",
+        photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/2020-02-24_Kannawa_Onsen_%E9%89%84%E8%BC%AA%E6%B8%A9%E6%B3%89%E5%85%A8%E6%99%AF_DSCF8631.jpg?width=900", alt: "Columnas de vapor brotando sobre Kannawa en Beppu", source: "https://commons.wikimedia.org/wiki/File:2020-02-24_Kannawa_Onsen_%E9%89%84%E8%BC%AA%E6%B8%A9%E6%B3%89%E5%85%A8%E6%99%AF_DSCF8631.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
+        desc: "Punto de partida aproximado para conducir hacia el teleférico del monte Tsurumi.",
         tip: "La ubicación marca la zona de Kannawa, no una dirección de alojamiento concreta."
       },
       {
@@ -76,7 +78,7 @@
         lat: 33.2923, lng: 131.4426, color: "#0ea5e9", type: "attraction",
         time: "09:30 - 11:30", price: "1.800 ¥",
         activity: "Subiremos en el teleférico más grande del oeste de Japón (capacidad para 101 personas) hasta los 1.300 metros del monte volcánico Tsurumi con vistas panorámicas a toda la bahía y las montañas de Kuju.",
-        photo: { src: "https://www.beppu-ropeway.co.jp/data/img_data/topics/20231019144106fileData-files15790.jpg", alt: "Teleférico ascendiendo por el monte Tsurumi en otoño", source: "https://www.beppu-ropeway.co.jp/topics/detail.php?id=202310191452517037", credit: "Beppu Ropeway · web oficial" },
+        photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Beppu_Ropeway.JPG?width=900", alt: "Cabina del teleférico de Beppu Ropeway ascendiendo al monte Tsurumi", source: "https://commons.wikimedia.org/wiki/File:Beppu_Ropeway.JPG", credit: "Wikimedia Commons · CC BY-SA 3.0" },
         desc: "Trayecto en coche de 15 min desde Kannawa. El teleférico cuenta con parking gratuito propio.",
         tip: "Aparca en el recinto del teleférico; no hay que ir a otro parking ni caminar desde una parada aparte."
       },
@@ -95,6 +97,8 @@
         title: "Trust Park Nagarekawa (P3)", jp: "楠町16",
         lat: 33.2778, lng: 131.5050, color: "#f59e0b", type: "parking",
         time: "16:30", price: "100 ¥ / h · máx. 500 ¥",
+        activity: "Aparcamiento céntrico en Beppu para acceder a pie a Takegawara Onsen y al restaurante Toyotsune.",
+        photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Beppu_station_2024_1.jpg?width=900", alt: "Zona urbana céntrica de Beppu junto al área de Nagarekawa", source: "https://commons.wikimedia.org/wiki/File:Beppu_station_2024_1.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
         desc: "Parking público de 23 plazas, a 2–3 minutos a pie de Takegawara Onsen.",
         tip: "Tarifa de ¥100/60 min; máximo ¥500/24 h (¥400 para plazas kei). Efectivo, tarjeta o QR."
       },
@@ -136,7 +140,7 @@
         lat: 33.3150, lng: 131.4770, color: "#10b981", type: "attraction",
         time: "09:30 - 11:00", price: "700 ¥",
         activity: "Nos adentraremos agachados en una pequeña cueva de piedra abovedada del siglo XIII para tumbarnos sobre un lecho de hierbas medicinales aromáticas 'sekisho' calentadas por vapor geotérmico puro.",
-        photo: { src: "https://www.ana.co.jp/japan-travel-planner/area/kyushu/oita/0000012/img008.jpg", alt: "Interior de la sauna de vapor herbal de Kannawa Mushi-yu", source: "https://www.ana.co.jp/en/us/japan-travel-planner/oita/0000012.html", credit: "ANA · Japan Travel Planner" },
+        photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Kannawa_Mushi-yu_Public_Bath.jpg?width=900", alt: "Entrada del edificio tradicional de Kannawa Mushi-yu", source: "https://commons.wikimedia.org/wiki/File:Kannawa_Mushi-yu_Public_Bath.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
         desc: "Fundada por el monje budista Ippen Shonin en 1276. Diez minutos dentro bastan para sudar todas las toxinas.",
         tip: "Estaciona en el parking general de Kannawa."
       },

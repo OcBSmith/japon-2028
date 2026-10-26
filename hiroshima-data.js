@@ -66,6 +66,7 @@ const hiroshimaPlaces = [
     lat: 34.3918, lng: 132.4585, color: "#d84315", type: "attraction",
     city: "Hiroshima", time: "18:15 - 20:00", price: "Entrada libre / compras",
     activity: "Incursión friki por el centro: Animate y Lashinbang (figuras y manga), la delirante tienda Village Vanguard en PARCO (frikadas y humor absurdo japonés) y arcade en Taito Station.",
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshima-Hondori_Shopping_Street_at_night.jpg?width=900", alt: "Galería comercial Hondori iluminada por la noche en Hiroshima", source: "https://commons.wikimedia.org/wiki/File:Hiroshima-Hondori_Shopping_Street_at_night.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "El epicentro de la cultura pop en Hiroshima. Plantas enteras de UFO catchers, máquinas de ritmo Taiko no Tatsujin y cápsulas gachapon.",
     tip: "En Village Vanguard encontrarás las chucherías más raras y libros gráficos bizarros de Japón."
   },
@@ -75,6 +76,7 @@ const hiroshimaPlaces = [
     lat: 34.3915, lng: 132.4595, color: "#d84315", type: "attraction",
     city: "Hiroshima", time: "20:00 - 21:30", price: "~¥1.000 - 1.500",
     activity: "Cenaremos en las cabinas individuales individuales de Ichiran (pides por máquina y te sirven tras una cortinilla sin hablar con nadie), y buscaremos la famosa máquina callejera de pizzas recién horneadas.",
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Ichiran_Ramen_at_Causeway_Bay_%2820181030141257%29.jpg?width=900", alt: "Cabinas individuales de degustación en Ichiran Ramen", source: "https://commons.wikimedia.org/wiki/File:Ichiran_Ramen_at_Causeway_Bay_(20181030141257).jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
     desc: "La quintaesencia de las excentricidades urbanas japonesas: aislamiento robótico para saborear ramen tonkotsu y pizza artesanal por botón.",
     tip: "Pide el pudding de té matcha en Ichiran para cerrar con broche de oro."
   },
@@ -86,6 +88,7 @@ const hiroshimaPlaces = [
     lat: 34.3123, lng: 132.3040, color: "#ea580c", type: "start",
     city: "Hatsukaichi, Hiroshima", time: "08:30 - 09:00", price: "Tren JR cubierto por JR Pass",
     activity: "Llegaremos en tren JR Línea Sanyo desde Hiroshima (25 min) y caminaremos al muelle para embarcar hacia la isla sagrada.",
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Miyajimaguchi_Ferry_Terminal_001.jpg?width=900", alt: "Terminal de ferris de Miyajimaguchi hacia la isla de Miyajima", source: "https://commons.wikimedia.org/wiki/File:Miyajimaguchi_Ferry_Terminal_001.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
     desc: "Punto de embarque hacia la isla de Miyajima. Muy accesible con transporte público.",
     tip: "Si usas el ferry JR Miyajima, está incluido en el JR Pass (se abona la tasa de visitante de ¥100)."
   },
@@ -135,6 +138,7 @@ const hiroshimaPlaces = [
     lat: 34.2985, lng: 132.3210, color: "#ea580c", type: "attraction",
     city: "Miyajima, Hiroshima", time: "18:00 - 20:00", price: "~¥2.500 - 3.500",
     activity: "Brindaremos en el Bar Gebura con su estrambótica copa de Ron con ositos Haribo congelados o Highball con limón local, antes de saborear la legendaria anguila de mar asada en Ueno Anagomeshi.",
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Anago-meshi_%E3%81%82%E3%81%AA%E3%81%94%E3%82%81%E3%81%97.jpg?width=900", alt: "Cazuela tradicional de anguila de mar asada Anago-meshi", source: "https://commons.wikimedia.org/wiki/File:Anago-meshi_あなごめし.jpg", credit: "Wikimedia Commons · CC BY-SA 3.0" },
     desc: "El contraste ideal entre la coctelería desenfadada de Miyajima y una receta tradicional de más de un siglo.",
     tip: "Al anochecer, el Gran Torii se ilumina y la isla queda en un silencio sobrecogedor al marcharse los turistas de día."
   },
@@ -166,6 +170,7 @@ const hiroshimaPlaces = [
     lat: 34.3948, lng: 132.4630, color: "#f59e0b", type: "attraction",
     city: "Hiroshima", time: "13:15 - 14:15", price: "~¥800 - 1.000",
     activity: "Almorzaremos la gran adicción gastronómica local: fideos sin sopa ultra especiados con pimienta de Sichuan (sansho), carne picada y cebolleta china.",
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/175do_DENO_Tantanmen_TOKYO.jpg?width=900", alt: "Fideos Shirunashi Tantanmen especiados con pimienta sansho", source: "https://commons.wikimedia.org/wiki/File:175do_DENO_Tantanmen_TOKYO.jpg", credit: "Wikimedia Commons · CC BY-SA 4.0" },
     desc: "La regla de oro: hay que remover los fideos exactamente 30 veces antes de dar el primer bocado.",
     tip: "Pide nivel de picante moderado si no toleras el cosquilleo anestésico de la pimienta de Sichuan."
   },
@@ -207,6 +212,7 @@ const hiroshimaPlaces = [
     lat: 34.1668, lng: 132.1762, color: "#10b981", type: "attraction",
     city: "Iwakuni, Yamaguchi", time: "11:30 - 13:30", price: "~¥400 helado / ¥100 museo",
     activity: "El gran reto gastronómico: elegir un helado entre más de 165 sabores insólitos (curry, wasabi, ramen, natto, salsa de soja, ajo, té verde...) en Musashi Soft Cream, y visitar las míticas serpientes albinas sagradas (Shirohebi), veneradas como deidades de la fortuna.",
+    photo: { src: "https://commons.wikimedia.org/wiki/Special:FilePath/Black_sesame_soft_ice_cream.jpg?width=900", alt: "Cono de helado artesanal japonés de sabor insólito", source: "https://commons.wikimedia.org/wiki/File:Black_sesame_soft_ice_cream.jpg", credit: "Wikimedia Commons · CC BY-SA 2.0" },
     desc: "Un duelo clásico entre los puestos rivales Musashi y Kojiro frente al puente, famoso en la televisión japonesa por su menú kilométrico de sabores bizarros.",
     tip: "¿Te atreves con el helado de curry o prefieres el de limón de Setouchi o matcha triple?"
   },
