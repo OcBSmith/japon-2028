@@ -64,6 +64,7 @@ aside > div:first-child {
 .filter-btn[data-filter="beppu"] { color: #b65c60 !important; }
 .filter-btn[data-filter="fukuoka"] { color: #327b72 !important; }
 .filter-btn[data-filter="okinawa"] { color: #5668a8 !important; }
+.filter-btn[data-filter="hiroshima"] { color: #d84315 !important; }
 .filter-btn[data-filter="hotel"] { color: #8d67a2 !important; }
 .filter-btn.ring-2 { outline: 2px solid #d7ad64; outline-offset: 1px; }
 
@@ -355,6 +356,10 @@ aside > div:first-child {
 .o-day-three { background: #4a9d91; }
 .o-day-four { background: #4788c7; }
 .o-day-five { background: #8061af; }
+.h-day-one { background: #d84315; }
+.h-day-two { background: #ea580c; }
+.h-day-three { background: #f59e0b; }
+.h-day-four { background: #10b981; }
 .legend-line { width: 18px; border-top: 2px solid; display: inline-block; margin-right: .1rem; }
 .car-line { border-color: #368ca5; }
 .walk-line { border-color: #d18b37; border-top-style: dashed; }

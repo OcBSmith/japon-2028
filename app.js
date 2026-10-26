@@ -32,13 +32,13 @@
 
     function getStopCode(place) {
       if (place.type === 'start') return 'S';
-      const dayStop = place.code.match(/^[DFO][1-6]-(\d+)$/);
+      const dayStop = place.code.match(/^[DFOH][1-6]-(\d+)$/);
       if (dayStop) return dayStop[1];
       return place.code.replace('-', '');
     }
 
     function getParkingMarker(place) {
-      if (place.region === 'fukuoka' || (place.region === 'okinawa' && !parkingInfo[place.id])) return '';
+      if (place.region === 'fukuoka' || (['okinawa', 'hiroshima'].includes(place.region) && !parkingInfo[place.id])) return '';
       if (place.type === 'parking') return '';
       const info = parkingInfo[place.id];
       if (!info) return '<span class="parking-badge parking-unknown" title="Parking sin confirmar">P?</span>';
@@ -77,9 +77,9 @@
         ? `<a href="${info.sourceUse}" target="_blank" rel="noopener">${info.sourceUseLabel}</a>`
         : '';
       return `<section class="parking-info">
-        <strong>🅿️ Parking</strong>
+        <strong>🅿️ Parking / Transporte</strong>
         <span>${info.summary}</span>
-        <details><summary>Cómo aparcar, tarifa y pago</summary>
+        <details><summary>Detalles de acceso y tarifas</summary>
           <p>${info.details}</p><div class="parking-sources">${sourceLink}${useLink}</div>
         </details>
       </section>`;
@@ -146,6 +146,17 @@
           { id: "okinawa4", tag: "O4", title: "Costa Central", color: "#4a9d91" },
           { id: "okinawa5", tag: "O5", title: "Sur Sagrado", color: "#e59b39" }
         ]
+      },
+      hiroshima: {
+        name: "Hiroshima",
+        icon: "⛩️",
+        baseTitle: "Base Hiroshima · 4 días",
+        days: [
+          { id: "hiroshima1", tag: "H1", title: "Paz y Orizuru", color: "#d84315" },
+          { id: "hiroshima2", tag: "H2", title: "Isla de Miyajima", color: "#ea580c" },
+          { id: "hiroshima3", tag: "H3", title: "Castillo y Jardín", color: "#f59e0b" },
+          { id: "hiroshima4", tag: "H4", title: "Iwakuni y minamoa", color: "#10b981" }
+        ]
       }
     };
 
@@ -160,7 +171,7 @@
       if (currentBase === 'all') {
         const allBtn = document.createElement('button');
         allBtn.className = `day-filter-btn ${currentDay === 'all' ? 'active' : ''}`;
-        allBtn.innerHTML = `🗺️ Todo el viaje (14 jornadas)`;
+        allBtn.innerHTML = `🗺️ Todo el viaje (18 jornadas)`;
         allBtn.onclick = () => filterDay('all');
         container.appendChild(allBtn);
 
@@ -181,7 +192,7 @@
             container.appendChild(btn);
           });
         });
-      } else if (['beppu', 'fukuoka', 'okinawa'].includes(currentBase)) {
+      } else if (['beppu', 'fukuoka', 'okinawa', 'hiroshima'].includes(currentBase)) {
         const struct = tripStructure[currentBase];
         const label = document.createElement('span');
         label.className = 'day-filter-label';
@@ -209,7 +220,7 @@
 
         const note = document.createElement('span');
         note.className = 'text-xs text-slate-500 py-1';
-        note.textContent = 'Opciones en Beppu y base de Hakata (Kyushu)';
+        note.textContent = 'Opciones en Beppu, Hakata, Naha e Hiroshima';
         container.appendChild(note);
       }
     }
@@ -250,7 +261,7 @@
     }
 
     function filterMap(filter) {
-      if (['all', 'beppu', 'fukuoka', 'okinawa', 'hotel'].includes(filter)) {
+      if (['all', 'beppu', 'fukuoka', 'okinawa', 'hiroshima', 'hotel'].includes(filter)) {
         setBaseFilter(filter);
       } else {
         filterDay(filter);
@@ -280,7 +291,11 @@
         okinawa2: 'Okinawa · Día 2: Costa norte (coche de alquiler). Puente e isla de Kouri, Acuario Churaumi, sendero de árboles Fukugi de Bise y atardecer en Cabo Manzamo.',
         okinawa3: 'Okinawa · Día 3: Excursión marítima a las islas Kerama (Zamami) desde el puerto Tomari; playas de aguas turquesas de Furuzamami y Ama (sujeto al mar).',
         okinawa4: 'Okinawa · Día 4: Costa central (coche). Aldea alfarera Yachimun no Sato, casas tradicionales en Ryukyu Mura y tarde en American Village de Chatan.',
-        okinawa5: 'Okinawa · Día 5: Sur sagrado e histórico. Sitio sagrado Sefa-Utaki (parking separado), cueva Gyokusendo en Okinawa World, Parque Memorial de la Paz en Mabuni y Museo Memorial Himeyuri en Itoman.'
+        okinawa5: 'Okinawa · Día 5: Sur sagrado e histórico. Sitio sagrado Sefa-Utaki (parking separado), cueva Gyokusendo en Okinawa World, Parque Memorial de la Paz en Mabuni y Museo Memorial Himeyuri en Itoman.',
+        hiroshima1: 'Hiroshima · Día 1: Eje de la Paz. Estación minamoa, okonomiyaki teppan, Cúpula de la Bomba Genbaku Dome, Parque Conmemorativo, Museo de la Paz, Torre Orizuru y galería Hondori.',
+        hiroshima2: 'Hiroshima · Día 2: Isla Sagrada de Miyajima. Tren y ferry con vistas al Gran Torii flotante, Santuario Itsukushima, ostras en Omotesando, teleférico al Monte Misen y cena de Anago-meshi.',
+        hiroshima3: 'Hiroshima · Día 3: Castillo Feudal y Tradición. Fortaleza histórica de Hiroshima y árboles supervivientes (hibakujumoku), jardín tradicional Shukkei-en, estadio EDION Peace Wing y cena en Ekinishi.',
+        hiroshima4: 'Hiroshima · Día 4: Excursión al histórico Puente Kintai-kyo en Iwakuni (cinco arcos de madera sin clavos), regreso a la estación de Hiroshima, compras en minamoa / ekie y terraza Soramore Plaza.'
       };
 
       const parkingNote = document.createElement('p');
@@ -291,12 +306,14 @@
         parkingNote.textContent = 'Base Fukuoka · 5 noches en Hakata (hotel pendiente). Cinco días de visitas y salida con Nanzoin opcional. Pases y horarios por reconfirmar para 2028.';
       } else if (filter === 'okinawa') {
         parkingNote.textContent = 'Base Okinawa · 5 días por la isla principal con base en Naha. Día 1 sin coche; coche desde Día 2. Excursión a Kerama flexible por el estado del mar.';
+      } else if (filter === 'hiroshima') {
+        parkingNote.textContent = 'Base Hiroshima · 4 días (Eje de la Paz, isla sagrada de Miyajima, Castillo feudal/Shukkei-en y excursión al puente Kintai-kyo en Iwakuni). Plan basado en el cuaderno oficial de viaje.';
       } else if (filter === 'beppu') {
         parkingNote.textContent = 'Base Beppu · tres días: Kannawa, Monte y Centro, y Yufuin. Visitas, rutas y alojamientos de la etapa.';
       } else if (filter === 'hotel') {
-        parkingNote.textContent = 'Opciones de alojamiento en Beppu; el hotel de Hakata queda pendiente. Al elegirlos, ajustaremos las salidas diarias.';
+        parkingNote.textContent = 'Opciones de alojamiento en Beppu, Hakata, Naha e Hiroshima. Al elegirlos, ajustaremos las salidas diarias.';
       } else {
-        parkingNote.textContent = 'Mapa completo de Japón 2028 (Kyushu y Okinawa). Selecciona una ciudad o un día concreto en la cabecera para filtrar paradas y trayectos.';
+        parkingNote.textContent = 'Mapa completo de Japón 2028 (Kyushu, Okinawa y Hiroshima). Selecciona una ciudad o un día concreto en la cabecera para filtrar paradas y trayectos.';
       }
       container.appendChild(parkingNote);
 
@@ -306,24 +323,28 @@
           ? places.filter(p => p.region === 'fukuoka' && p.type !== 'hotel')
           : filter === 'okinawa'
             ? places.filter(p => p.region === 'okinawa' && p.type !== 'hotel')
-          : filter === 'beppu'
-            ? places.filter(p => p.region !== 'fukuoka' && p.region !== 'okinawa' && p.type !== 'hotel')
-            : filter === 'hotel'
-              ? places.filter(p => p.type === 'hotel')
-              : places.filter(p => p.day === filter);
+            : filter === 'hiroshima'
+              ? places.filter(p => p.region === 'hiroshima' && p.type !== 'hotel')
+              : filter === 'beppu'
+                ? places.filter(p => !['fukuoka', 'okinawa', 'hiroshima'].includes(p.region) && p.type !== 'hotel')
+                : filter === 'hotel'
+                  ? places.filter(p => p.type === 'hotel')
+                  : places.filter(p => p.day === filter);
       const bounds = [];
 
       // Dibujar rutas
       Object.keys(routesData).forEach(dayKey => {
         let showRoute = false;
         if (filter === 'all') {
-          showRoute = !['beppu', 'fukuoka', 'okinawa'].includes(dayKey);
+          showRoute = !['beppu', 'fukuoka', 'okinawa', 'hiroshima'].includes(dayKey);
         } else if (filter === 'beppu') {
           showRoute = ['day1', 'day2', 'day3'].includes(dayKey);
         } else if (filter === 'fukuoka') {
           showRoute = ['fukuoka1', 'fukuoka2', 'fukuoka3', 'fukuoka4', 'fukuoka5', 'fukuoka6'].includes(dayKey);
         } else if (filter === 'okinawa') {
           showRoute = ['okinawa1', 'okinawa2', 'okinawa3', 'okinawa4', 'okinawa5'].includes(dayKey);
+        } else if (filter === 'hiroshima') {
+          showRoute = ['hiroshima1', 'hiroshima2', 'hiroshima3', 'hiroshima4'].includes(dayKey);
         } else {
           showRoute = (filter === dayKey);
         }
@@ -332,7 +353,7 @@
         (routesData[dayKey] || []).forEach(seg => {
           const lineColor = ({ car: '#368ca5', walk: '#d18b37', rail: '#8055ad', bus: '#438c7a', boat: '#3975b7' })[seg.type] || '#368ca5';
           const lineDash = seg.type === 'walk' ? '7, 8' : ['rail', 'boat'].includes(seg.type) ? '3, 7' : null;
-          const modeLabel = ({ car: 'En coche', walk: 'A pie', rail: 'En tren', bus: 'En bus', boat: 'En barco' })[seg.type] || 'Trayecto';
+          const modeLabel = ({ car: 'En coche', walk: 'A pie', rail: 'En tren / tranvía', bus: 'En bus', boat: 'En ferry' })[seg.type] || 'Trayecto';
           const points = [seg.from, seg.to];
           L.polyline(points, {
             color: '#fffdf8', weight: 8, opacity: 0.95, lineCap: 'round'
@@ -361,7 +382,7 @@
       let previousDay = null;
       filtered.forEach(place => {
         const beppuDayTitles = { day1: 'Día 1 · Kannawa', day2: 'Día 2 · Monte y Centro', day3: 'Día 3 · Yufuin' };
-        if (['beppu', 'fukuoka', 'okinawa'].includes(filter) && place.day !== previousDay) {
+        if (['beppu', 'fukuoka', 'okinawa', 'hiroshima'].includes(filter) && place.day !== previousDay) {
           const heading = document.createElement('h2');
           heading.className = 'fukuoka-day-heading';
           heading.textContent = filter === 'beppu' ? (beppuDayTitles[place.day] || place.dayLabel) : place.dayLabel;
@@ -385,7 +406,7 @@
           cardsMap[place.id]?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         });
 
-        const gmapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.title + ' ' + place.jp + ' ' + (place.city || 'Beppu'))}`;
+        const gmapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.title + ' ' + place.jp + ' ' + (place.city || 'Hiroshima'))}`;
 
         marker.bindPopup(`
           <div class="p-1 max-w-[240px]">
@@ -471,5 +492,5 @@
 
     renderDayFilterBar();
     renderMapAndSidebar('all');
-    const initialRegionBounds = L.latLngBounds([30.5, 126.0], [37.8, 141.5]);
+    const initialRegionBounds = L.latLngBounds([25.8, 126.0], [35.5, 134.0]);
     map.fitBounds(initialRegionBounds, { padding: [16, 16], maxZoom: 8 });
