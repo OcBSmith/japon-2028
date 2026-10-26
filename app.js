@@ -225,6 +225,48 @@
       }
     }
 
+    function updateTripCounterUI() {
+      const counterEl = document.getElementById('trip-day-counter');
+      const breakdownEl = document.getElementById('trip-breakdown-bar');
+      if (!counterEl) return;
+      const totalDays = Object.values(tripStructure).reduce((sum, b) => sum + b.days.length, 0);
+      const totalStops = places.filter(p => p.type !== 'hotel').length;
+
+      if (currentBase === 'all' && currentDay === 'all') {
+        counterEl.textContent = `${totalDays} días planificados`;
+        if (breakdownEl) {
+          breakdownEl.innerHTML = `<span>Bases planificadas:</span> <span class="font-medium text-slate-700">♨️ Beppu (3d) · 🏙️ Fukuoka (6d) · 🌺 Okinawa (5d) · ⛩️ Hiroshima (4d)</span> <span class="text-slate-400">· ${totalStops} paradas</span>`;
+        }
+      } else if (currentDay !== 'all') {
+        let dayObj = null;
+        let baseName = '';
+        for (const b of Object.values(tripStructure)) {
+          const found = b.days.find(d => d.id === currentDay);
+          if (found) { dayObj = found; baseName = b.name; break; }
+        }
+        const dayStops = places.filter(p => p.day === currentDay).length;
+        if (dayObj) {
+          counterEl.textContent = `${dayObj.tag} · ${dayObj.title} (${dayStops} paradas)`;
+          if (breakdownEl) {
+            breakdownEl.innerHTML = `<span>Jornada activa:</span> <span class="font-medium text-slate-700">${baseName} · ${dayObj.title}</span> <span class="text-slate-400">· Total viaje: ${totalDays} días</span>`;
+          }
+        }
+      } else if (tripStructure[currentBase]) {
+        const struct = tripStructure[currentBase];
+        const baseStops = places.filter(p => p.region === currentBase && p.type !== 'hotel').length;
+        counterEl.textContent = `${struct.days.length} días en ${struct.name}`;
+        if (breakdownEl) {
+          breakdownEl.innerHTML = `<span>Base activa:</span> <span class="font-medium text-slate-700">${struct.icon} ${struct.name} (${struct.days.length} jornadas · ${baseStops} paradas)</span> <span class="text-slate-400">· Total viaje: ${totalDays} días</span>`;
+        }
+      } else if (currentBase === 'hotel') {
+        const totalHotels = places.filter(p => p.type === 'hotel').length;
+        counterEl.textContent = `${totalHotels} alojamientos previstos`;
+        if (breakdownEl) {
+          breakdownEl.innerHTML = `<span>Alojamientos recomendados en Beppu, Hakata, Naha e Hiroshima</span>`;
+        }
+      }
+    }
+
     function updateBaseButtonsUI() {
       document.querySelectorAll('#filter-buttons .filter-btn').forEach(btn => {
         if (btn.dataset.filter === currentBase) {
@@ -240,6 +282,7 @@
       currentDay = 'all';
       updateBaseButtonsUI();
       renderDayFilterBar();
+      updateTripCounterUI();
       switchTab('itinerary');
       renderMapAndSidebar(base);
     }
@@ -256,6 +299,7 @@
       }
       updateBaseButtonsUI();
       renderDayFilterBar();
+      updateTripCounterUI();
       switchTab('itinerary');
       renderMapAndSidebar(dayId === 'all' ? currentBase : dayId);
     }
@@ -491,6 +535,7 @@
     }
 
     renderDayFilterBar();
+    updateTripCounterUI();
     renderMapAndSidebar('all');
     const initialRegionBounds = L.latLngBounds([25.8, 126.0], [35.5, 134.0]);
     map.fitBounds(initialRegionBounds, { padding: [16, 16], maxZoom: 8 });

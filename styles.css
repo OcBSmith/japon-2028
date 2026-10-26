@@ -380,6 +380,22 @@ aside > div:first-child {
 ::-webkit-scrollbar-thumb { background: #d8d2c5; border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: #b9ad98; }
 
+/* Badge Contador de Días */
+#trip-day-badge {
+  background: rgba(49, 91, 73, 0.1) !important;
+  color: var(--pine) !important;
+  border: 1px solid rgba(49, 91, 73, 0.25) !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+}
+#trip-day-badge span.animate-pulse {
+  background-color: #10b981 !important;
+}
+#trip-breakdown-bar span.font-medium {
+  color: var(--pine) !important;
+}
+
 @media (max-width: 767px) {
   header { padding-top: .7rem !important; padding-bottom: .7rem !important; }
   header h1 { font-size: .95rem !important; }
